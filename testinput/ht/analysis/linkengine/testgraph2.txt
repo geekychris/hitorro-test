@@ -1,0 +1,10 @@
+0|http://za/a/b/c.txt|
+1|http://za/a/b/d.txt|0
+2|http://zb/a/b/d.txt|1
+3|http://zb/a/b/f.txt|1,2
+4|http://za/a/x/d.txt|2,3,0
+5|http://zf/a/b/c.txt|
+6|http://zf/a/b/d.txt|5
+7|http://ze/a/b/d.txt|2,3,4,5,6
+8|http://zd/a/b/f.txt|9,6,4
+9|http://zd/a/x/d.txt|2,4,5,8,7

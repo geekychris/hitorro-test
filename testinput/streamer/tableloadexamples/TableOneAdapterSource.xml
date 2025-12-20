@@ -1,0 +1,9 @@
+<?xml version="1.0"?> <!DOCTYPE StreamerAdapterSource SYSTEM "streamer.dtd">
+
+<StreamerAdapterSource>
+    <Name>TableOneTest</Name>
+    <ExpressionDefinition>config/tableloadexample/TableExpressionDefinition.xml</ExpressionDefinition>
+    <LogicalMappingFile>config/tableloadexample/TableOneLogicalMapping.xml</LogicalMappingFile>
+    <TableReader>CSVReader</TableReader>
+    <TableData>config/tableloadexample/TableOne.csv</TableData>
+</StreamerAdapterSource>

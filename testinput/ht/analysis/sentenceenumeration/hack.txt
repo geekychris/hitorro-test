@@ -1,0 +1,29 @@
+(CNN) -- When Matt Richardson works from his home in Brooklyn, New York, he likes to keeps the TV on to stay informed, but some celebrity or another is always taking up airtime and bugging him.
+
+"A while ago it was Charlie Sheen. And then it was Sarah Palin. And then it was Donald Trump," said Richardson, who is a video producer for Make Magazine. "And after a while I realized there's sort of always someone who I don't really want to hear about."
+
+Like any good hacker, Richardson decided to come up with a fix: He developed a do-it-yourself TV remote control that will automatically mute the television when certain celebrity names are mentioned.
+
+He plans to debut and explain the hack at the upcoming Maker Faire event in New York. The name of his talk is "Enough Already: Silencing Celebs with Arduino."
+
+Unless you're speaking at that do-it-yourself inventors' conference, you may be wondering: "What the heck is Arduino?" It's basically a piece of computer hardware that can be programmed to do anything you want. In this case, Richardson combined a couple of Arduino circuit boards with an infrared LED light -- that little red bubble on the front of your TV remote -- and programmed the whole thing to interact with a TV's closed-captioning system.
+
+The DIY gadget reads the closed-captioning transcript as it's aired and then automatically mutes the television for 30 seconds when it picks up certain words. That list of unspeakables can be re-programmed (so if you really love Sarah Palin, don't worry -- you could mute President Obama or Sen. Harry Reid references instead).
+
+As long as that person's name keeps coming up, the remote keeps muting the TV. The first time he got it to work, Richardson said he "was in silent bliss for that 30 seconds I didn't have to hear about Kim Kardashian."
+
+The whole thing cost about $70 to make, he said, and he built and coded it in about a week, working only in his spare time. It's worth noting that this isn't a product Richardson expects to be commercialized -- it's just for fun. He posted the code online so other people can play around with it.
+
+The implementation itself is pretty crude, he said. Closed captioning doesn't always appear in real-time, so sometimes the system will miss a first reference.
+
+If you're interested, he explains the process in detail in a blog post.
+
+In the comments below that post, Make Magazine readers chime in with all kinds of ways this sort of closed-caption-reading tech could be used.
+
+"You could generate the list of key words dynamically. E.g., by monitoring Twitter's trending topics or by parsing Google's zeitgeist lists," one reader suggests.
+
+Another wants to use it to mute all commercials:
+
+"Does the CC (closed captioning) stream contain any kind of marker for indicating commercials? Because I'd tweak this in a heartbeat to mute the deliberately louder commercials that seem all the rage these days."
+
+The Maker Faire, which is dedicated to all kinds of cool and bizarre crafts, machines, computer hacks and mousetraps, will be held September 17 and 18 in New York. You can see a full schedule on their website.

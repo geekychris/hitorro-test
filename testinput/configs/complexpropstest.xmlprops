@@ -1,0 +1,8 @@
+<complex>
+   <a name="PG_BODY_WORDCNT" ftype="base" cptype="feature" type="int" cardinality="single">
+       <extractor name="wordcount" field="body" scratch="false" groups ="a,b"/>
+   </a>
+   <b name="PG_TITLE_WORDCNT" ftype="base" cptype="feature" type="int" cardinality="single">
+       <extractor name="wordcount" field="title" scratch="false" groups ="a,b"/>
+   </b>
+</complex>

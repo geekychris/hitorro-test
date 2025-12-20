@@ -1,0 +1,38 @@
+<features>
+   <bodycount name="PG_BODY_WORDCNT" ftype="base" type="int" cardinality="single">
+       <extractor name="wordcount" field="body" scratch="false" groups ="a,b"/>
+   </bodycount>
+   <titlecount name="PG_TITLE_WORDCNT" ftype="base" type="int" cardinality="single">
+       <extractor name="wordcount" field="title" scratch="false" groups ="a,b"/>
+   </titlecount>
+
+
+   <wordcount name="TW_BODY_WORDCNT" ftype="base" type="int" cardinality="single">
+       <extractor name="wordfreq" field="body" scratch="false" groups ="msc"/>
+   </wordcount>
+   <hashcount name="TW_BODY_HASHCNT" ftype="base" type="int" cardinality="single">
+       <extractor name="hashfreq" field="body" scratch="false" groups ="msc"/>
+   </hashcount>
+   <responsecount name="TW_BODY_RESPONSECNT" ftype="base" type="int" cardinality="single">
+       <extractor name="responsefreq" field="body" scratch="false" groups ="msc"/>
+   </responsecount>
+   <uricount name="TW_BODY_URICNT" ftype="base" type="int" cardinality="single">
+       <extractor name="urifreq" field="body" scratch="false" groups ="msc"/>
+   </uricount>
+
+   <refcount name="TW_BODY_REFCNT" ftype="base" type="int" cardinality="single">
+       <extractor name="reffreq" field="body" scratch="false" groups ="msc"/>
+   </refcount>
+
+
+
+   <followingcount name="TW_FOLLOWING_COUNT" ftype="base" type="int" cardinality="single">
+       <extractor name="followingcount" field="body" scratch="false" groups ="msc"/>
+   </followingcount>
+   <friendscount name="TW_FRIENDS_COUNT" ftype="base" type="int" cardinality="single">
+       <extractor name="friendscount" field="body" scratch="false" groups ="msc"/>
+   </friendscount>
+   <statuscount name="TW_STATUS_COUNT" ftype="base" type="int" cardinality="single">
+       <extractor name="statuscount" field="body" scratch="false" groups ="msc"/>
+   </statuscount>
+</features>

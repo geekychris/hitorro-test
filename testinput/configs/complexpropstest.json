@@ -1,0 +1,30 @@
+{
+  "complex": {
+    "a": {
+      "cardinality": "single",
+      "cptype": "feature",
+      "extractor": {
+        "field": "body",
+        "groups": "a,b",
+        "name": "wordcount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "PG_BODY_WORDCNT",
+      "type": "int"
+    },
+    "b": {
+      "cardinality": "single",
+      "cptype": "feature",
+      "extractor": {
+        "field": "title",
+        "groups": "a,b",
+        "name": "wordcount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "PG_TITLE_WORDCNT",
+      "type": "int"
+    }
+  }
+}

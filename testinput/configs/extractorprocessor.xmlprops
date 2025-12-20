@@ -1,0 +1,10 @@
+<extractor>
+    <processing groups="a" inputqlength="1000" threadcount="4" outputqlength="1000"/>
+    <channels>
+        <docs>
+            <source impl="ht.base.docprocessing.HDFSDocprocessEnqueue" lgkname="${ht_home}/queuekeys/extractors.lgk" root="file://${ht_home}/queue/docs"/>
+            <target impl= "ht.base.docprocessing.ECSinkTarget" segment="features">
+            </target>
+        </docs>
+    </channels>
+</extractor>

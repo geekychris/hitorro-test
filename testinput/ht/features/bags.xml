@@ -1,0 +1,11 @@
+<bags>
+    <webpage url="http://foo1.com/bla.txt" title="doc 1 title" created="1234567">
+        <body>This is the body text for doc 1</body>
+    </webpage>
+    <webpage url="http://foo2.com/bla.txt" title="doc 2 title" created="56789">
+        <body>This is the body text for doc 2</body>
+    </webpage>
+    <webpage url="http://foo3.com/bla.txt" title="doc 3 title" created="7654321">
+        <body>This is the body text for doc 3</body>
+    </webpage>
+</bags>

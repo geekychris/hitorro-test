@@ -1,0 +1,9 @@
+index testdata/basic/Table10000AdapterSource.xml
+wait 5
+test testdata/basic/shortpostest.txt
+test testdata/basic/shortnegtest.txt
+test testdata/basic/longpostest.txt
+test testdata/basic/longnegtest.txt
+wait 15
+exit
+

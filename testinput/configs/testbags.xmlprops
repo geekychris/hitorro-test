@@ -1,0 +1,46 @@
+<types>
+    <webpage>
+        <classmeta isview="false" isdynamic="true" shortname="webpage"/>
+        <fields>
+            <id class="java.lang.Long">
+               <mapper class="ht.util.typesystem.valuesource.mapper.UrlHashMapper" srcfield="url" canonical="false"/>
+            </id>
+            <created class="java.lang.Long">
+            </created>
+            <authoreddate class="java.lang.Long">
+            </authoreddate>
+            <url class="java.lang.String">
+               <ft fulltext="true" displayname="urldisplay" lucenefield="url"/>
+            </url>
+            <title class="java.lang.String">
+                <ft fulltext="true" displayname="titledisplay" lucenefield="title"/>
+            </title>
+            <body class="java.lang.String">
+                <ft fulltext="true" displayname="bodydisplay" lucenefield="body"/>
+            </body>
+            <author class="java.lang.String">
+                <ft fulltext="true" displayname="author" lucenefield="author"/>
+            </author>
+            <keywords class="java.lang.String">
+                <ft fulltext="true" displayname="keywords" lucenefield="keywords"/>
+            </keywords>
+        </fields>
+    </webpage>
+    <extendedwebpage extends ="webpage">
+        <fields>
+            <extendedbody class="java.lang.String">
+               <ft fulltext="true" displayname="extendedbody" lucenefield="ebody"/>
+            </extendedbody>
+        </fields>
+    </extendedwebpage>
+    <foo type="93">
+        <classmeta isview="false" isdynamic="true" shortname="93"/>
+
+        <fields>
+            <publishedDate>
+               <mapper class="ht.util.typesystem.valuesource.mapper.UrlHashMapper" srcfield="url" canonical="false"/>
+               <ft fulltext="true" displayname="urldisplay" lucenefield="url"/>
+            </publishedDate>
+        </fields> 
+    </foo>
+</types>

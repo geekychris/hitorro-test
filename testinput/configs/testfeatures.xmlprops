@@ -1,0 +1,33 @@
+<configroot>
+    <features>
+        <testintsingle name="testintsingle" ftype="base" type="int" cardinality="single" value="blaa"/>
+        <testbytesingle name="testbytesingle" ftype="base" type="byte" cardinality="single" value="blaa"/>
+        <testshortsingle name="testshortsingle" ftype="base" type="short" cardinality="single" value="blaa"/>
+        <testfloatsingle name="testfloatsingle" ftype="base" type="float" cardinality="single" value="blaa"/>
+        <testfloatsinglederived name="testfloatsinglederived" ftype="derived" type="byte" cardinality="single"
+                                rootname="testfloatsingle" mapping="floatnorm, similaritycompressor"/>
+        <testdoublesingle name="testdoublesingle" ftype="base" type="double" cardinality="single" value="blaa"/>
+        <testlongsingle name="testlongsingle" ftype="base" type="long" cardinality="single"/>
+        <testlongindex name="testlongindex" ftype="base" type="long" cardinality="index" value="blaa"/>
+        <testlongvariable name="testlongvariable" ftype="base" type="long" cardinality="named" value="blaa"/>
+    </features>
+    <extractors>
+       <wordcount class="ht.features.extractor.baseextractors.WordCount"  description=""  props.compute="uniquewords"/>
+       <wordfreq class="ht.features.extractor.baseextractors.TokTypeCounterExtractor"  description=""  props.compute="word"/>
+       <reffreq class="ht.features.extractor.baseextractors.TokTypeCounterExtractor"  description=""  props.compute="ref"/>
+
+       <responsefreq class="ht.features.extractor.baseextractors.TokTypeCounterExtractor"  description=""  props.compute="response"/>
+       <hashfreq class="ht.features.extractor.baseextractors.TokTypeCounterExtractor"  description=""  props.compute="hash"/>
+       <urifreq class="ht.features.extractor.baseextractors.TokTypeCounterExtractor"  description=""  props.compute="uri"/>
+
+       <followingcount class="ht.features.extractor.baseextractors.IntFieldExtractor"  description=""  props.field="followerscount"/>
+       <friendscount class="ht.features.extractor.baseextractors.IntFieldExtractor"  description=""  props.field="friendscount"/>
+       <statuscount class="ht.features.extractor.baseextractors.IntFieldExtractor"  description=""  props.field="statuscount"/>
+    </extractors>
+
+
+    <mappers>
+        <floatnorm class="ht.features.io.normalizer.FloatLogNorm" foo="bla"/>
+        <similaritycompressor class="ht.features.io.compressor.SimilarityCompressor" foo="bla"/>
+    </mappers>
+</configroot>

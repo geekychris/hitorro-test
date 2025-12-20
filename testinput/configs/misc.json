@@ -1,0 +1,7 @@
+{
+  "feilesystem": {
+    "fake": {
+      "dir": "${ht_home}/fakefs"
+    }
+  }
+}

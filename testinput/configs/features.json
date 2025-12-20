@@ -1,0 +1,124 @@
+{
+  "features": {
+    "bodycount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "a,b",
+        "name": "wordcount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "PG_BODY_WORDCNT",
+      "type": "int"
+    },
+    "followingcount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "followingcount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_FOLLOWING_COUNT",
+      "type": "int"
+    },
+    "friendscount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "friendscount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_FRIENDS_COUNT",
+      "type": "int"
+    },
+    "hashcount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "hashfreq",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_BODY_HASHCNT",
+      "type": "int"
+    },
+    "refcount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "reffreq",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_BODY_REFCNT",
+      "type": "int"
+    },
+    "responsecount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "responsefreq",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_BODY_RESPONSECNT",
+      "type": "int"
+    },
+    "statuscount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "statuscount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_STATUS_COUNT",
+      "type": "int"
+    },
+    "titlecount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "title",
+        "groups": "a,b",
+        "name": "wordcount",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "PG_TITLE_WORDCNT",
+      "type": "int"
+    },
+    "uricount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "urifreq",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_BODY_URICNT",
+      "type": "int"
+    },
+    "wordcount": {
+      "cardinality": "single",
+      "extractor": {
+        "field": "body",
+        "groups": "msc",
+        "name": "wordfreq",
+        "scratch": "false"
+      },
+      "ftype": "base",
+      "name": "TW_BODY_WORDCNT",
+      "type": "int"
+    }
+  }
+}

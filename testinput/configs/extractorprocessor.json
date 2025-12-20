@@ -1,0 +1,23 @@
+{
+  "extractor": {
+    "channels": {
+      "docs": {
+        "source": {
+          "impl": "ht.basedms.docprocessing.HDFSDocprocessEnqueue",
+          "lgkname": "${ht_home}/queuekeys/extractors.lgk",
+          "root": "file://${ht_home}/queue/docs"
+        },
+        "target": {
+          "impl": "ht.basedms.docprocessing.ECSinkTarget",
+          "segment": "features"
+        }
+      }
+    },
+    "processing": {
+      "groups": "a",
+      "inputqlength": "1000",
+      "outputqlength": "1000",
+      "threadcount": "4"
+    }
+  }
+}

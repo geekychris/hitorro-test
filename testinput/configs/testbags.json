@@ -1,0 +1,102 @@
+{
+  "types": {
+    "extendedwebpage": {
+      "extends": "webpage",
+      "fields": {
+        "extendedbody": {
+          "class": "java.lang.String",
+          "ft": {
+            "displayname": "extendedbody",
+            "fulltext": "true",
+            "lucenefield": "ebody"
+          }
+        }
+      }
+    },
+    "foo": {
+      "classmeta": {
+        "isdynamic": "true",
+        "isview": "false",
+        "shortname": "93"
+      },
+      "fields": {
+        "publisheddate": {
+          "ft": {
+            "displayname": "urldisplay",
+            "fulltext": "true",
+            "lucenefield": "url"
+          },
+          "mapper": {
+            "canonical": "false",
+            "class": "ht.util.typesystem.valuesource.mapper.UrlHashMapper",
+            "srcfield": "url"
+          }
+        }
+      },
+      "type": "93"
+    },
+    "webpage": {
+      "classmeta": {
+        "isdynamic": "true",
+        "isview": "false",
+        "shortname": "webpage"
+      },
+      "fields": {
+        "author": {
+          "class": "java.lang.String",
+          "ft": {
+            "displayname": "author",
+            "fulltext": "true",
+            "lucenefield": "author"
+          }
+        },
+        "authoreddate": {
+          "class": "java.lang.Long"
+        },
+        "body": {
+          "class": "java.lang.String",
+          "ft": {
+            "displayname": "bodydisplay",
+            "fulltext": "true",
+            "lucenefield": "body"
+          }
+        },
+        "created": {
+          "class": "java.lang.Long"
+        },
+        "id": {
+          "class": "java.lang.Long",
+          "mapper": {
+            "canonical": "false",
+            "class": "ht.util.typesystem.valuesource.mapper.UrlHashMapper",
+            "srcfield": "url"
+          }
+        },
+        "keywords": {
+          "class": "java.lang.String",
+          "ft": {
+            "displayname": "keywords",
+            "fulltext": "true",
+            "lucenefield": "keywords"
+          }
+        },
+        "title": {
+          "class": "java.lang.String",
+          "ft": {
+            "displayname": "titledisplay",
+            "fulltext": "true",
+            "lucenefield": "title"
+          }
+        },
+        "url": {
+          "class": "java.lang.String",
+          "ft": {
+            "displayname": "urldisplay",
+            "fulltext": "true",
+            "lucenefield": "url"
+          }
+        }
+      }
+    }
+  }
+}

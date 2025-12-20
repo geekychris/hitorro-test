@@ -1,0 +1,189 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.REPTree -M 2 -V 0.0010 -N 3 -S 1 -L -1
+Relation:     data
+Instances:    11235
+Attributes:   23
+              COMPOSITE_TEST
+              MENTION_DMURL_AMP_COUNT
+              MENTION_DMURL_DASHES_COUNT
+              MENTION_DMURL_SLASH_COUNT
+              MENTION_DMURL_UNDERSCORE_COUNT
+              MENTION_HTML_ATAG_HREF_COUNT
+              MENTION_HTML_ATAG_HREF_UNIQCOUNT
+              MENTION_SENTIMENT2
+              MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT
+              MENTION_TEXT_PHRASE_DICT_SPAM_COUNT
+              MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ
+              MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT
+              MENTION_TEXT_PHRASE_TRIGRAM_UNIQCOUNT
+              MENTION_TEXT_SENTENCE_COUNT
+              MENTION_TEXT_SENTENCE_MAX
+              MENTION_TEXT_SENTENCE_UNIQCOUNT
+              MENTION_TEXT_WORD_COUNT
+              MENTION_TEXT_WORD_MOSTFREQ
+              MENTION_TEXT_WORD_UNIQCOUNT
+              MENTION_TITLE_BANG_COUNT
+              MENTION_TITLE_PHRASE_DICT_SPAM_COUNT
+              MENTION_TITLE_WORD_COUNT
+              SPAM
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+
+REPTree
+============
+
+MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 7.5
+|   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT < 0.5
+|   |   MENTION_DMURL_SLASH_COUNT < 4.5
+|   |   |   MENTION_TEXT_WORD_MOSTFREQ < 11.5
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 2
+|   |   |   |   |   MENTION_TEXT_WORD_COUNT < 104.5
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX < 478 : no (1479/79) [735/37]
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 478
+|   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT < 3.5 : yes (5/1) [1/0]
+|   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT >= 3.5 : no (2/0) [3/0]
+|   |   |   |   |   MENTION_TEXT_WORD_COUNT >= 104.5 : no (492/9) [256/9]
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 2
+|   |   |   |   |   COMPOSITE_TEST < 225
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ < 2.5 : no (3/1) [1/0]
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 2.5 : yes (7/0) [6/1]
+|   |   |   |   |   COMPOSITE_TEST >= 225
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX < 224.5
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT < 17.5
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX < 171.5
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ < 1.5 : yes (2/0) [1/0]
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ >= 1.5 : no (7/0) [4/3]
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 171.5 : no (16/0) [14/2]
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT >= 17.5 : yes (4/0) [1/0]
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 224.5
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT < 5.5 : yes (6/0) [1/1]
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT >= 5.5 : no (14/5) [7/2]
+|   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 11.5
+|   |   |   |   MENTION_TEXT_WORD_COUNT < 79.5 : yes (66/3) [24/0]
+|   |   |   |   MENTION_TEXT_WORD_COUNT >= 79.5
+|   |   |   |   |   MENTION_TEXT_SENTENCE_MAX < 320.5 : no (407/23) [211/14]
+|   |   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 320.5
+|   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT < 2318
+|   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT < 942
+|   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT < 3.5
+|   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT < 5.5
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT < 12.5 : no (20/0) [14/2]
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT >= 12.5
+|   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 < -14780.5 : no (11/0) [5/1]
+|   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 >= -14780.5
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX < 641.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT < 3.5 : no (9/0) [1/0]
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT >= 3.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT < 4 : yes (9/4) [5/1]
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT >= 4 : no (4/0) [4/0]
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 641.5 : yes (2/0) [3/2]
+|   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT >= 5.5
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT < 2.5
+|   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ < 14.5 : yes (5/0) [1/0]
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 14.5 : no (21/6) [5/0]
+|   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT >= 1.5 : yes (24/0) [9/0]
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT >= 2.5
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT < 4.5 : yes (10/0) [8/0]
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT >= 4.5 : no (39/2) [22/1]
+|   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT >= 3.5 : no (70/5) [41/3]
+|   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT >= 942 : yes (15/3) [3/0]
+|   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT >= 2318 : no (83/4) [36/0]
+|   |   MENTION_DMURL_SLASH_COUNT >= 4.5
+|   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT < 2904
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 0.5 : no (2979/70) [1502/35]
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 0.5
+|   |   |   |   |   MENTION_DMURL_DASHES_COUNT < 9.5
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ < 5.5
+|   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 2 : no (103/6) [50/1]
+|   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 2
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX < 145.5 : yes (7/3) [3/1]
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 145.5 : no (16/2) [5/2]
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 5.5 : no (580/22) [265/11]
+|   |   |   |   |   MENTION_DMURL_DASHES_COUNT >= 9.5 : no (61/10) [28/1]
+|   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT >= 2904
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT < 5.5
+|   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT < 13.5 : no (23/0) [18/1]
+|   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT >= 13.5
+|   |   |   |   |   |   MENTION_TEXT_WORD_COUNT < 1147.5 : yes (2/0) [0/0]
+|   |   |   |   |   |   MENTION_TEXT_WORD_COUNT >= 1147.5
+|   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT < 1665.5
+|   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT < 3708
+|   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT < 8.5 : no (12/0) [5/1]
+|   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT >= 8.5
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT < 37.5 : no (7/0) [2/1]
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT >= 37.5
+|   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 < 30983.5
+|   |   |   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST < 4368.5 : no (2/0) [2/0]
+|   |   |   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST >= 4368.5 : yes (8/2) [3/0]
+|   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 >= 30983.5 : no (10/1) [3/1]
+|   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT >= 3708 : yes (5/0) [0/0]
+|   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT >= 1665.5 : no (19/1) [14/3]
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT >= 5.5
+|   |   |   |   |   MENTION_TITLE_WORD_COUNT < 6.5 : no (2/0) [1/0]
+|   |   |   |   |   MENTION_TITLE_WORD_COUNT >= 6.5 : yes (9/1) [7/3]
+|   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT >= 0.5
+|   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT < 2
+|   |   |   MENTION_TITLE_WORD_COUNT < 10.5
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT < 4 : no (60/7) [32/5]
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT >= 4 : yes (6/2) [2/0]
+|   |   |   MENTION_TITLE_WORD_COUNT >= 10.5 : yes (40/13) [21/3]
+|   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT >= 2 : yes (23/0) [12/0]
+MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 7.5
+|   MENTION_DMURL_DASHES_COUNT < 1.5
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 19.5
+|   |   |   MENTION_TEXT_WORD_MOSTFREQ < 8 : yes (37/1) [19/0]
+|   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 8
+|   |   |   |   MENTION_TEXT_SENTENCE_MAX < 913
+|   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT < 10.5
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ < 36.5 : no (19/8) [8/2]
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 36.5 : yes (15/1) [10/2]
+|   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT >= 10.5 : no (22/4) [9/2]
+|   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 913 : yes (14/0) [9/0]
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 19.5 : yes (395/4) [202/2]
+|   MENTION_DMURL_DASHES_COUNT >= 1.5
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 28.5
+|   |   |   MENTION_TEXT_WORD_MOSTFREQ < 6.5 : yes (13/0) [7/2]
+|   |   |   MENTION_TEXT_WORD_MOSTFREQ >= 6.5 : no (126/20) [68/12]
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 28.5
+|   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT < 36
+|   |   |   |   MENTION_TEXT_SENTENCE_MAX < 262 : yes (12/1) [3/1]
+|   |   |   |   MENTION_TEXT_SENTENCE_MAX >= 262
+|   |   |   |   |   MENTION_DMURL_SLASH_COUNT < 4.5 : no (6/0) [4/1]
+|   |   |   |   |   MENTION_DMURL_SLASH_COUNT >= 4.5
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT < 88 : yes (11/2) [4/0]
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT >= 88 : no (4/0) [1/0]
+|   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT >= 36 : yes (10/0) [4/0]
+
+Size of the tree : 123
+
+Time taken to build model: 0.51 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances       10737               95.5674 %
+Incorrectly Classified Instances       498                4.4326 %
+Kappa statistic                          0.7868
+Mean absolute error                      0.0816
+Root mean squared error                  0.2012
+Relative absolute error                 35.102  %
+Root relative squared error             59.0079 %
+Total Number of Instances            11235     
+
+=== Detailed Accuracy By Class ===
+
+TP Rate   FP Rate   Precision   Recall  F-Measure   Class
+  0.994     0.29       0.957     0.994     0.975    no
+  0.71      0.006      0.947     0.71      0.811    yes
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9666   60 |    a = no
+  438 1071 |    b = yes
+
+

@@ -1,0 +1,87 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.ADTree -B 10 -E -3
+Relation:     data
+Instances:    11235
+Attributes:   23
+              COMPOSITE_TEST
+              MENTION_DMURL_AMP_COUNT
+              MENTION_DMURL_DASHES_COUNT
+              MENTION_DMURL_SLASH_COUNT
+              MENTION_DMURL_UNDERSCORE_COUNT
+              MENTION_HTML_ATAG_HREF_COUNT
+              MENTION_HTML_ATAG_HREF_UNIQCOUNT
+              MENTION_SENTIMENT2
+              MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT
+              MENTION_TEXT_PHRASE_DICT_SPAM_COUNT
+              MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ
+              MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT
+              MENTION_TEXT_PHRASE_TRIGRAM_UNIQCOUNT
+              MENTION_TEXT_SENTENCE_COUNT
+              MENTION_TEXT_SENTENCE_MAX
+              MENTION_TEXT_SENTENCE_UNIQCOUNT
+              MENTION_TEXT_WORD_COUNT
+              MENTION_TEXT_WORD_MOSTFREQ
+              MENTION_TEXT_WORD_UNIQCOUNT
+              MENTION_TITLE_BANG_COUNT
+              MENTION_TITLE_PHRASE_DICT_SPAM_COUNT
+              MENTION_TITLE_WORD_COUNT
+              SPAM
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Alternating decision tree:
+
+: -0.931
+|  (1)MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 4.5: -0.413
+|  |  (4)MENTION_TEXT_PHRASE_DICT_SPAM_COUNT < 0.5: -0.147
+|  |  (4)MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 0.5: 0.386
+|  |  (5)MENTION_TITLE_WORD_COUNT < 9.5: -0.143
+|  |  (5)MENTION_TITLE_WORD_COUNT >= 9.5: 0.355
+|  (1)MENTION_TEXT_PHRASE_DICT_SPAM_COUNT >= 4.5: 1.336
+|  |  (3)MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT < 20.5: -0.402
+|  |  |  (10)MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT < 207: 1.085
+|  |  |  (10)MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT >= 207: -0.222
+|  |  (3)MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT >= 20.5: 1.453
+|  (2)MENTION_DMURL_SLASH_COUNT < 4.5: 0.305
+|  |  (6)MENTION_DMURL_DASHES_COUNT < 4.5: 0.085
+|  |  |  (7)MENTION_TITLE_PHRASE_DICT_SPAM_COUNT < 0.5: -0.079
+|  |  |  |  (8)MENTION_TEXT_WORD_MOSTFREQ < 11.5: -0.239
+|  |  |  |  (8)MENTION_TEXT_WORD_MOSTFREQ >= 11.5: 0.264
+|  |  |  |  |  (9)MENTION_TEXT_SENTENCE_UNIQCOUNT < 11.5: 1.397
+|  |  |  |  |  (9)MENTION_TEXT_SENTENCE_UNIQCOUNT >= 11.5: -0.267
+|  |  |  (7)MENTION_TITLE_PHRASE_DICT_SPAM_COUNT >= 0.5: 0.908
+|  |  (6)MENTION_DMURL_DASHES_COUNT >= 4.5: -0.539
+|  (2)MENTION_DMURL_SLASH_COUNT >= 4.5: -0.407
+Legend: -ve = no, +ve = yes
+Tree size (total number of nodes): 31
+Leaves (number of predictor nodes): 21
+
+Time taken to build model: 2.6 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances       10537               93.7873 %
+Incorrectly Classified Instances       698                6.2127 %
+Kappa statistic                          0.6949
+Mean absolute error                      0.2065
+Root mean squared error                  0.259 
+Relative absolute error                 88.784  %
+Root relative squared error             75.9434 %
+Total Number of Instances            11235     
+
+=== Detailed Accuracy By Class ===
+
+TP Rate   FP Rate   Precision   Recall  F-Measure   Class
+  0.987     0.378      0.944     0.987     0.965    no
+  0.622     0.013      0.881     0.622     0.729    yes
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9599  127 |    a = no
+  571  938 |    b = yes
+
+

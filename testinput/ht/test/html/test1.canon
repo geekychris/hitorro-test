@@ -1,0 +1,254 @@
+Body Text
+Support
+Products
+Partners
+JBoss Labs
+Login
+Register
+Careers
+Contact Us
+Documentation
+ » 
+NHibernate Quick Start Guide
+News
+Documentation
+Download
+Forum & Mailinglists
+Support & Training
+JIRA Issue Tracking
+ht.Wiki Community Area
+Team Weblog
+   
+Member Menu
+·
+ 
+List Directory
+·
+ 
+Document history
+·
+ 
+Print page
+·
+ 
+WikiWord Link
+ 
+ 
+Monthly JBoss newsletter:
+ 
+NHibernate Quick Start Guide
+What is NHibernate?
+Why this guide?
+Translations of this guide
+First things first
+The development process
+Step 1: Writing the SQL
+Step 2: Creating the .NET class
+Step 3: Writing the mapping file
+Step 4: Creating a configuration file for your database
+Step 5: Start doing magic with NHibernate
+What is NHibernate?
+NHibernate is a .NET based object persistence library for relational databases. NHibernate is a port of the excellent Java
+Hibernate
+relational persistence tool.
+NHibernate handles persisting your .NET objects to and from an underlying relational database. Rather than you having to write SQL to get your objects in and out of the database, NHibernate takes care of this for you. Your code only needs to be concerned with your objects, NHibernate generates the SQL and makes sure that things end up in the correct tables and columns.
+Why this guide?
+Anybody who is at all familiar with Hibernate will recognize this as being really similar to Glen Smith's A Hitchhiker's Guide to Hibernate (no longer available online). The content is based on that guide so all of the credit needs to be given to him.
+NHibernate's documentation is not anywhere near the point that Hibernate's documentation is. However, the projects are similar enough that the reader should be able to look at Hibernate's documentation and get a very good feel for how NHibernate works.
+This doc is intended to get you up and running with NHibernate as quickly as possible. It will cover how to persist a simple object to a table. For more complex examples please see the NUnit tests that come with the code.
+Translations of this guide
+Irwan Azam has written a version of the Quick Start in
+Bahasa Malaysia
+.
+Simone Busoli has written a version of the Quick Start in
+Italian
+.
+Yasar Gozudeli has written a version of the Quick Start in
+Turkish
+.
+First things first
+You'll be needing an NHibernate distribution. Simply download the
+latest copy
+, and unzip the contents into a folder.
+The development process
+NHibernate is going to have some tools to help you generate a schema (in codebase now), generate classes from mapping files (on the drawing board), and to update a schema (suggestion from a new developer). However, for this example we are going to assume everything from setting up the table to coding the .NET class is done manually. Here are the steps we are going to perform:
+Create the table to persist the .NET class to.
+Create a .NET class that needs to be persisted.
+Create a mapping file so NHibernate knows how to persist the .NET class' properties
+Create a configuration file for NHibernate to know how to connect to your database
+Use the NHibernate API
+Step 1: Writing the SQL
+The example we're working through is a very simple one. Consider you've developing a basic user management subsystem for your website. We'll use a Users table that looks like this (I am assuming you already have a database setup - in my case I am calling it NHibernate):
+use NHibernategoCREATE TABLE users (  LogonID nvarchar(20) NOT NULL default '0',  Name nvarchar(40) default NULL,  Password nvarchar(20) default NULL,  EmailAddress nvarchar(40) default NULL,  LastLogon datetime default NULL,  PRIMARY KEY  (LogonID))go
+I'm using MS SQL Server 2000, but feel free to use any kind of database you've got a .NET Data Provider driver for. We've got a User table with a Logon ID, Full Name, Password, Email and date of last logon. Pretty standard sort of deal. Next step is to write a .NET Class to handle a given User
+Step 2: Creating the .NET class
+When we get a bunch of users in memory, we'll need some sort of object to hold them for us. NHibernate works via reflection on properties of the objects, so we'll need to add properties to the class we want to persist. A simple class that can be persisted with NHibernate looks like:
+using System;namespace NHibernate.Examples.QuickStart{    public class User    {        private string id;        private string userName;        private string password;        private string emailAddress;        private DateTime lastLogon;        public User()        {        }        public string Id         {            get { return id; }            set { id = value; }        }        public string UserName         {            get { return userName; }            set { userName = value; }        }        public string Password         {            get { return password; }            set { password = value; }        }        public string EmailAddress         {            get { return emailAddress; }            set { emailAddress = value; }        }        public DateTime LastLogon         {            get { return lastLogon; }            set { lastLogon = value; }        }            }}
+In our example above, we've made the properties and the constructor public - but that's not a requirement for NHibernate - it can use public, protected, internal, or even private properties to persist your data.
+Step 3: Writing the mapping file
+So we've now got our SQL table, and the .NET class that's going to apply to it. We still need a way to tell        NHibernate how to apply from one to the other. This is accomplished via a mapping file. The cleanest (most        maintainable) way is to write one mapping file per class, and if you name it
+YourObject.hbm.xml
+and put        it in the same directory as your class, NHibernate will make things even easier for you. Here's an example of        what
+User.hbm.xml
+might look like:
+<?xml version="1.0" encoding="utf-8" ?><hibernate-mapping xmlns="urn:nhibernate-mapping-2.0">    <class name="NHibernate.Examples.QuickStart.User, NHibernate.Examples" table="users">        <id name="Id" column="LogonId" type="String" length="20">             <generator class="assigned" />         </id>         <property name="UserName" column="Name" type="String" length="40"/>         <property name="Password" type="String" length="20"/>         <property name="EmailAddress" type="String" length="40"/>        <property name="LastLogon" type="DateTime"/>    </class></hibernate-mapping>
+Let's have a look at some lines of interest in our file. The first tag of interest is the
+class
+tag.        Here we apply from the type name (class name and assembly) to the
+users
+table in our database. This is        slightly different than Hibernate. You have to tell NHibernate where to load the class from. In this case we are        loading the class
+NHibernate.Examples.QuickStart.User
+in the assembly
+NHibernate.Examples
+.        NHibernate follows the same rules of loading a type as the .NET Framework - so if you have any confusion about        how to specify the type see the .NET Framework SDK.
+Let's skip the
+id
+tag for a moment and talk about the
+property
+tags. A cursory scan will show        this is where the work is being done. The name attribute is the property on our .NET class, and the column is        the name of the field in our database. The type attribute is optional (NHibernate will use reflection for a        best-guess if you leave it out).
+Ok. Let's return to that
+id
+tag. You may have guessed that this tag has something to do with mapping to        the primary key of the table. You'd be right. The form of the
+id
+tag is very similar to the
+property
+tags we just looked at. We apply from the Property (
+name
+) to the target database field (
+column
+).
+The embedded generator tag tells NHibernate how it should produce the primary key (it's quite happy to generate        one for you, of whatever type you prefer, but you'll need to tell it how). In our case, we set it to assigned,        meaning that our object is going to generate its own keys (the User object will always need to have a UserID        after all). If you're keen to let NHibernate generate keys for you, you'll be interested in class settings like
+uuid.hex
+and
+uuid.string
+(check out the docs for more info).
+NOTE:
+If you are using Visual Studio .NET to compile make sure that you set the Build Action of        the
+User.hbm.xml
+file to Embedded Resource. The mapping file will now be a part of the Asssembly. The        subtle detail's importance will be evident later.
+NOTE:
+If the only change you make between builds is to a mapping file then you must
+Rebuild
+the project. Visual Studio .NET will not recompile a project if only an hbm.xml file was changed.
+Step 4: Creating a configuration file for your database
+We still haven't told NHibernate where to find our database. The most straightforward way is to feed NHibernate a configuration section from your application's config file.  This is the equivalent of using a Properties file with Hibernate.  Here's what one might look like:
+<?xml version="1.0" encoding="utf-8" ?><configuration>  <configSections>    <section      name="nhibernate"       type="System.Configuration.NameValueSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"     />  </configSections>  <nhibernate>    <add       key="hibernate.connection.provider"      value="NHibernate.Connection.DriverConnectionProvider"    />    <add      key="hibernate.dialect"      value="NHibernate.Dialect.MsSql2000Dialect"    />    <add      key="hibernate.connection.driver_class"      value="NHibernate.Driver.SqlClientDriver"    />    <add      key="hibernate.connection.connection_string"      value="Server=localhost;initial catalog=nhibernate;Integrated Security=SSPI"    />  </nhibernate></configuration>
+The example above uses a SqlClient driver, connects to the nhibernate database on localhost, and uses the supplied username and password. There are a bunch of other properties you can set to "tune" how NHibernate accesses your database of choice. Once again, check out the docs for detailed info.
+NOTE:
+Please note that the above configuration file does not have any information about configuring log4net. NHibernate uses log4net to log what is happening internally. In a production application I would recommend configuring log4net and setting NHibernate to the appropriate log level for your scenario. See
+Configuring log4net Logging
+?
+for more details.
+Step 5: Start doing magic with NHibernate
+All the hard work has now been done. If all has gone well so far, you'll have the following:
+User.cs
+- your C# class to persist
+User.hbm.xml
+- your NHibernate mapping file
+app.config
+- your configuration settings with ADO.NET connection info (you can do this in code if you like)
+A SQL User table in your database
+Making use of NHibernate in your source is pretty straightforward. The nutshell edition goes:
+Add a reference to
+NHibernate.dll
+(in the 'bin' folder where you installed NHibernate)
+Create a configuration object
+Tell the configuration about the type of objects you want to store
+Create a session to your database of choice
+Load, save and query your objects
+Flush() your Session back to the database
+Let's have a look at some source to make it all much clearer.
+To save typing, add the following
+using
+statements to the beginning of your class
+using NHibernate;using NHibernate.Cfg;
+First, create a
+Configuration
+object...
+The
+Configuration
+object has knowledge of all the mappings that are going on between .NET classes and the backend database.
+Configuration cfg = new Configuration();cfg.AddAssembly("NHibernate.Examples");
+The
+Configuration
+object will look through the assembly for any files ending in
+.hbm.xml
+. There are other ways to add the mapping files, but this is probably the easiest.
+Then, create a session object...
+The
+ISession
+object represents a connection to your backend database and the
+ITransaction
+represents a NHibernate managed Transaction.
+ISessionFactory factory = cfg.BuildSessionFactory();ISession session = factory.OpenSession();ITransaction transaction = session.BeginTransaction();
+Then Load, Save and Query your Objects!
+Now you just use your objects in a .NET-native way. Would you like to store a new User in the database? Try something like this:
+User newUser = new User();newUser.Id = "joe_cool";newUser.UserName = "Joseph Cool";newUser.Password = "abc123";newUser.EmailAddress = "joe@cool.com";newUser.LastLogon = DateTime.Now;// Tell NHibernate that this object should be savedsession.Save(newUser);// commit all of the changes to the DB and close the ISessiontransaction.Commit();session.Close();
+As you can see, the great thing about NHibernate is the low overhead. Go ahead and query your database and verify that you see the new record in the users table. For the most part you just worry about your business objects, and tell NHibernate when you're done.
+Let's say you want to retrieve an object when you know the user ID (eg. During a login process to your site). Once a session is opened it's a one-liner; pass in the key and you're done:
+// open another session to retrieve the just inserted usersession = factory.OpenSession();User joeCool = (User)session.Load(typeof(User), "joe_cool");
+The User object you get back is live! Change its properties and it will get persisted to the database on next Flush().
+// set Joe Cool's Last Login propertyjoeCool.LastLogon = DateTime.Now;// flush the changes from the Session to the Databasesession.Flush();
+All you had to do to get NHibernate to write the changes you made was to ask it to Flush the Session. Go ahead and query your database through its tools to verify the Property LastLogin was updated for "joe_cool".
+Even better, you can query your table and get back a System.Collections.IList of live objects. Try something like this:
+IList userList = session.CreateCriteria(typeof(User)).List();foreach(User user in userList){    System.Diagnostics.Debug.WriteLine(user.Id + " last logged in at " + user.LastLogon);}
+This query will return the whole table. Typically you'll want a lot more control - like list the Users who have logged in after March 14, 2004 10:00 PM, so you'll do something like:
+IList recentUsers = session.CreateCriteria(typeof(User))                .Add(Expression.Expression.Gt("LastLogon", new DateTime(2004, 03, 14, 20, 0, 0)))                .List();foreach(User user in recentUsers){    System.Diagnostics.Debug.WriteLine(user.Id + " last logged in at " + user.LastLogon);}
+There are a wealth of querying options in the documentation, but this will give you an idea of the kind of power Hibernate offers you.
+...And finally
+Close()
+your session. This will free up the ADO.NET connection that NHibernate is using.
+// tell NHibernate to close this Sessionsession.Close();
+And that's it...
+You've created objects, persisted them, and retrieved (via criteria queries and key lookup). You've gotta be happy with that!
+Now that you've got a feel for NHibernate, you'll be well served by having a good look through the extensive documentation that comes with
+Hibernate 2.1
+. There's a world of cool stuff to explore like handling one-to-many SQL mapping, persisting sorted and nested collections, tuning performance and much more.
+Enjoy! And happy NHibernating!
+Once again - all credit should go to Glen Smith and his article that served as the template for this article - A Hitchhiker's Guide to Hibernate.
+NHibernate Quick Start Guide was originally written by Mike Doerfler.
+ 
+NEW COMMENT
+SqlClient driver
+20 Mar 2006, 16:48
+BrianSu
+Where to find SqlClient driver mentioned in the sample? Thanks.
+ 
+It is part of .NET Framework and is installed with it.
+29 May 2006, 06:36
+sergey
+It is part of .NET Framework and is installed with it.
+ 
+Code for this example
+08 Jun 2006, 04:13
+ismar
+Is it possible to get the project code for this example. I can't get it work. Hope that is possible, beacuse I really want to get NHibernate work with ASP.NET. Thanks a lot!
+ 
+Various issues
+17 Jun 2006, 10:29
+Idiosyncrasy
+You may encounter a number of issues while working through the above quickstart; here are some tips:(1) Don't forget to name your assembly; in Visual Studio 2005 go to the project menu and select <projectname> properties at the bottom of the menu. Here make sure the Assembly Name is equal to the one you're using in your .hbm.xml mapping files and specifying in your AddAssembly call.(2) In both versions I tried (1.0.2.0 and 1.2.0.Alpha1) I got an "method get_Id() should be virtual" error. To allow dynamic proxy generation in your class you must add a virtual modifier to all you accessors, like this:        public virtual string Id        {            get { return id; }            set { id = value; }        }(3) If you get an "invalid column name" exception even when you're sure the column names are correctly spelled in the mapping file, try using a fully qualified name for the database table, for example:        <class name="NHibernate.Examples.QuickStart.User, NHibernate.Examples" table="[NHibernate].[dbo].[Users]">
+ 
+Re: SqlClient driver
+28 Aug 2006, 13:35
+vantaic
+POST QUESTIONS ON THE FORUM! COMMENTS HERE SHOULD ADD VALUE TO THE PAGE!On 20 Mar 2006 16:48, BrianSu wrote:
+>Where to find SqlClient driver mentioned in the sample? Thanks.
+You can find more information from the article "Databases supported by NHibernate"
+http://www.hibernate.org/361.html
+Van
+ 
+NHibernate configuration section
+13 Sep 2006, 06:31
+mrkashifali
+After following the Quick Start Guide I am getting an ERROR:The hibernate.connection.driver_class must be specified in the NHibernate configuration sectionI have clearly declare the hibernate.connection.driver_class Key in app.config file: <add key="hibernate.connection.driver_class" value="NHibernate.Driver.SqlClientDriver" />I am stucked up with this. Kindly help to solve this prob. Thanks, KK
+ 
+© Copyright 2006, Red Hat Middleware, LLC. All rights reserved.		JBoss is a registered trademark and servicemark of Red Hat Middleware, LLC. 		[
+Privacy Policy
+]
+Title Text
+hibernate.org - NHibernate Quick Start Guide
+Meta Description
+The Professional Open Source Company
+Meta Keywords
+hibernate, object relational mapping, database, java, persistence, database, mapper, orm

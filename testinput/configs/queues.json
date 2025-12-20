@@ -1,0 +1,15 @@
+{
+  "docqueue": {
+    "docs": {
+      "queuedir": "file://${ht_home}/queue/docs",
+      "tmpdir": "${ht_home}/tmpqueue/docs"
+    },
+    "features": {
+      "partitioner": {
+        "class": "ht.features.FeatureDatePartitioner"
+      },
+      "queuedir": "file://${ht_home}/queue/features",
+      "tmpdir": "${ht_home}/tmpqueue/features"
+    }
+  }
+}

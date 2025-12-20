@@ -1,0 +1,20 @@
+<?xml version="1.0"?> <!DOCTYPE LogicalMapping SYSTEM "streamer.dtd">
+<LogicalMapping name="tableone">
+    <LogicalColumnDefinition name="CreditCardNumber">
+        <Formatter>
+            <Name>CreditCardFormatter</Name>
+            <Argument name="warnModElevenCheck">false</Argument>
+        </Formatter>
+        <Field>CreditCardNumber</Field>
+    </LogicalColumnDefinition>
+
+    <LogicalColumnDefinition name="PersonName">
+        <Formatter>
+            <Name>NameOnlyFormatter</Name>
+        </Formatter>
+        <Field>FirstName</Field>
+        <Field>LastName</Field>
+        <Seperator></Seperator>
+    </LogicalColumnDefinition>
+</LogicalMapping>
+

@@ -1,0 +1,142 @@
+{
+  "extractors": {
+    "followingcount": {
+      "class": "ht.features.extractor.baseextractors.IntFieldExtractor",
+      "description": "",
+      "props": {
+        "field": "followerscount"
+      }
+    },
+    "friendscount": {
+      "class": "ht.features.extractor.baseextractors.IntFieldExtractor",
+      "description": "",
+      "props": {
+        "field": "friendscount"
+      }
+    },
+    "hashfreq": {
+      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "description": "",
+      "props": {
+        "compute": "hash"
+      }
+    },
+    "reffreq": {
+      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "description": "",
+      "props": {
+        "compute": "ref"
+      }
+    },
+    "responsefreq": {
+      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "description": "",
+      "props": {
+        "compute": "response"
+      }
+    },
+    "statuscount": {
+      "class": "ht.features.extractor.baseextractors.IntFieldExtractor",
+      "description": "",
+      "props": {
+        "field": "statuscount"
+      }
+    },
+    "urifreq": {
+      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "description": "",
+      "props": {
+        "compute": "uri"
+      }
+    },
+    "wordcount": {
+      "class": "ht.features.extractor.baseextractors.WordCount",
+      "description": "",
+      "props": {
+        "compute": "uniquewords"
+      }
+    },
+    "wordfreq": {
+      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "description": "",
+      "props": {
+        "compute": "word"
+      }
+    }
+  },
+  "features": {
+    "testbytesingle": {
+      "cardinality": "single",
+      "ftype": "base",
+      "name": "testbytesingle",
+      "type": "byte",
+      "value": "blaa"
+    },
+    "testdoublesingle": {
+      "cardinality": "single",
+      "ftype": "base",
+      "name": "testdoublesingle",
+      "type": "double",
+      "value": "blaa"
+    },
+    "testfloatsingle": {
+      "cardinality": "single",
+      "ftype": "base",
+      "name": "testfloatsingle",
+      "type": "float",
+      "value": "blaa"
+    },
+    "testfloatsinglederived": {
+      "cardinality": "single",
+      "ftype": "derived",
+      "mapping": "floatnorm, similaritycompressor",
+      "name": "testfloatsinglederived",
+      "rootname": "testfloatsingle",
+      "type": "byte"
+    },
+    "testintsingle": {
+      "cardinality": "single",
+      "ftype": "base",
+      "name": "testintsingle",
+      "type": "int",
+      "value": "blaa"
+    },
+    "testlongindex": {
+      "cardinality": "index",
+      "ftype": "base",
+      "name": "testlongindex",
+      "type": "long",
+      "value": "blaa"
+    },
+    "testlongsingle": {
+      "cardinality": "single",
+      "ftype": "base",
+      "name": "testlongsingle",
+      "type": "long"
+    },
+    "testlongvariable": {
+      "cardinality": "named",
+      "ftype": "base",
+      "name": "testlongvariable",
+      "type": "long",
+      "value": "blaa"
+    },
+    "testshortsingle": {
+      "cardinality": "single",
+      "ftype": "base",
+      "name": "testshortsingle",
+      "type": "short",
+      "value": "blaa"
+    }
+  },
+  "mappers": {
+    "floatnorm": {
+      "class": "ht.features.io.normalizer.FloatLogNorm",
+      "foo": "bla"
+    },
+    "similaritycompressor": {
+      "class": "ht.features.io.compressor.SimilarityCompressor",
+      "foo": "bla"
+    }
+  }
+}

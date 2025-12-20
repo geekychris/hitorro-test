@@ -1,0 +1,339 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data
+Instances:    11235
+Attributes:   23
+              COMPOSITE_TEST
+              MENTION_DMURL_AMP_COUNT
+              MENTION_DMURL_DASHES_COUNT
+              MENTION_DMURL_SLASH_COUNT
+              MENTION_DMURL_UNDERSCORE_COUNT
+              MENTION_HTML_ATAG_HREF_COUNT
+              MENTION_HTML_ATAG_HREF_UNIQCOUNT
+              MENTION_SENTIMENT2
+              MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT
+              MENTION_TEXT_PHRASE_DICT_SPAM_COUNT
+              MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ
+              MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT
+              MENTION_TEXT_PHRASE_TRIGRAM_UNIQCOUNT
+              MENTION_TEXT_SENTENCE_COUNT
+              MENTION_TEXT_SENTENCE_MAX
+              MENTION_TEXT_SENTENCE_UNIQCOUNT
+              MENTION_TEXT_WORD_COUNT
+              MENTION_TEXT_WORD_MOSTFREQ
+              MENTION_TEXT_WORD_UNIQCOUNT
+              MENTION_TITLE_BANG_COUNT
+              MENTION_TITLE_PHRASE_DICT_SPAM_COUNT
+              MENTION_TITLE_WORD_COUNT
+              SPAM
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT <= 6
+|   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT <= 0
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT <= 1
+|   |   |   MENTION_TEXT_SENTENCE_MAX <= 467
+|   |   |   |   MENTION_TITLE_WORD_COUNT <= 9
+|   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 4
+|   |   |   |   |   |   COMPOSITE_TEST <= 1936: no (2791.0/126.0)
+|   |   |   |   |   |   COMPOSITE_TEST > 1936
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 34
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 10
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 1: no (9.0/2.0)
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 1
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 2: yes (13.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 2
+|   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 3: no (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 3: yes (3.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 10: no (20.0)
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 34: no (93.0/5.0)
+|   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 4: no (4078.0/87.0)
+|   |   |   |   MENTION_TITLE_WORD_COUNT > 9
+|   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT <= 147
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ <= 10: no (466.0/23.0)
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ > 10
+|   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT <= 66: yes (79.0)
+|   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT > 66
+|   |   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT <= 2: no (3.0)
+|   |   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT > 2: yes (7.0)
+|   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT > 147
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 72: no (1073.0/40.0)
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 72
+|   |   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT <= 3126: no (11.0)
+|   |   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT > 3126
+|   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT <= 1447: yes (7.0)
+|   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT > 1447: no (7.0)
+|   |   |   MENTION_TEXT_SENTENCE_MAX > 467
+|   |   |   |   MENTION_DMURL_SLASH_COUNT <= 3
+|   |   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT <= 0
+|   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT <= 2322
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 17
+|   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 5
+|   |   |   |   |   |   |   |   |   COMPOSITE_TEST <= 1687: no (42.0)
+|   |   |   |   |   |   |   |   |   COMPOSITE_TEST > 1687
+|   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST <= 1855: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST > 1855: no (2.0)
+|   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 5
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT <= 184
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 589
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 1: no (4.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 1
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 2: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 2: no (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 589: yes (9.0)
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT > 184
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 0
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT <= 464: no (26.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT > 464
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 4: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 4: no (4.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 0
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 549: no (5.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 549
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 676: yes (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 676: no (2.0)
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 17
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 1
+|   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 4: no (5.0)
+|   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 4: yes (4.0/1.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 1
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 6: yes (13.0)
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 6: no (4.0/1.0)
+|   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT > 2322: no (41.0)
+|   |   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT > 0
+|   |   |   |   |   |   MENTION_DMURL_AMP_COUNT <= 1
+|   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT <= 1: yes (13.0)
+|   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT > 1: no (3.0)
+|   |   |   |   |   |   MENTION_DMURL_AMP_COUNT > 1: no (3.0)
+|   |   |   |   MENTION_DMURL_SLASH_COUNT > 3
+|   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 1228: no (410.0/21.0)
+|   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 1228
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 1267: yes (9.0/1.0)
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 1267
+|   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 25: no (49.0/2.0)
+|   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 25
+|   |   |   |   |   |   |   |   MENTION_TITLE_BANG_COUNT <= 0
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 79: yes (5.0)
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 79
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 214: no (8.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 214
+|   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 302: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 302: no (2.0)
+|   |   |   |   |   |   |   |   MENTION_TITLE_BANG_COUNT > 0: yes (2.0)
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT > 1
+|   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 15
+|   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 7
+|   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 21
+|   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 4
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 164: yes (17.0/1.0)
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 164
+|   |   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT <= 9
+|   |   |   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT <= 4
+|   |   |   |   |   |   |   |   |   |   MENTION_DMURL_AMP_COUNT <= 0
+|   |   |   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 9
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ <= 7: yes (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ > 7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 398: no (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 398: yes (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 9: no (5.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 3
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 <= -29304: no (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 > -29304
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 409: yes (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 409: no (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT > 2: no (2.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_DMURL_AMP_COUNT > 0: yes (2.0)
+|   |   |   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT > 4: no (18.0/3.0)
+|   |   |   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT > 9: yes (6.0)
+|   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 4
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 3
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 23: yes (5.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 23: no (2.0)
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 3
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 149
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 1: yes (7.0/1.0)
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 1: no (7.0/1.0)
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 149: no (43.0/2.0)
+|   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 21: yes (8.0)
+|   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 7
+|   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 3
+|   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT <= 0
+|   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 8
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 1
+|   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 <= -31617: yes (2.0)
+|   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 > -31617
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 414: no (18.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 414
+|   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 <= 0: yes (3.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_SENTIMENT2 > 0: no (3.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 1
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 2: yes (14.0)
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 2
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 3
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 25: no (9.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 25
+|   |   |   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST <= 3365: yes (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST > 3365: no (6.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 3: yes (6.0)
+|   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 8
+|   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT <= 460: yes (3.0/1.0)
+|   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_BIGRAM_UNIQCOUNT > 460: no (23.0)
+|   |   |   |   |   |   MENTION_DMURL_DASHES_COUNT > 0
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 8: no (26.0)
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 8
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 2: yes (2.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 2: no (6.0/1.0)
+|   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 3
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_UNIQCOUNT <= 154
+|   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 4
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 138
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 8: no (2.0)
+|   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 8: yes (6.0)
+|   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 138: no (56.0/5.0)
+|   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 4: no (270.0/9.0)
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_UNIQCOUNT > 154
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 3013
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 22: no (35.0/1.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 22
+|   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 5
+|   |   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 4
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT <= 5: no (9.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT > 5: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 4
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 13
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 18
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 15: no (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 15: yes (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 18: no (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 13: yes (3.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 3
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ <= 45: no (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ > 45: yes (8.0/1.0)
+|   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 5
+|   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 3: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 3
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 11: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 11
+|   |   |   |   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST <= 3380
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 214: no (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 214: yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   COMPOSITE_TEST > 3380: no (15.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_MOSTFREQ > 1: no (11.0)
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 3013: yes (8.0)
+|   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 15
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 21: no (7.0)
+|   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 21: yes (20.0)
+|   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT > 0
+|   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT <= 1
+|   |   |   MENTION_DMURL_DASHES_COUNT <= 4
+|   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 438
+|   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT <= 0
+|   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 9: no (18.0)
+|   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 9
+|   |   |   |   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT <= 0
+|   |   |   |   |   |   |   |   MENTION_SENTIMENT2 <= -29304: no (2.0)
+|   |   |   |   |   |   |   |   MENTION_SENTIMENT2 > -29304: yes (6.0/1.0)
+|   |   |   |   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT > 0: no (2.0)
+|   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT > 0
+|   |   |   |   |   |   MENTION_DMURL_AMP_COUNT <= 0
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 2
+|   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT <= 26: yes (8.0)
+|   |   |   |   |   |   |   |   MENTION_TEXT_WORD_COUNT > 26: no (14.0)
+|   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 2
+|   |   |   |   |   |   |   |   COMPOSITE_TEST <= 231: yes (54.0)
+|   |   |   |   |   |   |   |   COMPOSITE_TEST > 231
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 147: no (6.0)
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 147
+|   |   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT <= 3
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 6: no (2.0)
+|   |   |   |   |   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 6: yes (6.0)
+|   |   |   |   |   |   |   |   |   |   MENTION_DMURL_SLASH_COUNT > 3: yes (5.0/2.0)
+|   |   |   |   |   |   MENTION_DMURL_AMP_COUNT > 0: no (8.0/1.0)
+|   |   |   |   MENTION_TEXT_SENTENCE_MAX > 438: no (18.0)
+|   |   |   MENTION_DMURL_DASHES_COUNT > 4: no (55.0/2.0)
+|   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT > 1: yes (52.0)
+MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT > 6
+|   MENTION_DMURL_DASHES_COUNT <= 1
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 18
+|   |   |   MENTION_DMURL_SLASH_COUNT <= 7
+|   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT <= 1
+|   |   |   |   |   MENTION_DMURL_DASHES_COUNT <= 0: yes (97.0/12.0)
+|   |   |   |   |   MENTION_DMURL_DASHES_COUNT > 0
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX <= 390: yes (4.0)
+|   |   |   |   |   |   MENTION_TEXT_SENTENCE_MAX > 390: no (4.0)
+|   |   |   |   MENTION_DMURL_UNDERSCORE_COUNT > 1: no (6.0/1.0)
+|   |   |   MENTION_DMURL_SLASH_COUNT > 7: no (7.0)
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 18: yes (573.0/5.0)
+|   MENTION_DMURL_DASHES_COUNT > 1
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT <= 36
+|   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 27
+|   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 15
+|   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ <= 17
+|   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT <= 7
+|   |   |   |   |   |   |   MENTION_TITLE_BANG_COUNT <= 0
+|   |   |   |   |   |   |   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT <= 0
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT <= 12: no (7.0/1.0)
+|   |   |   |   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 12: yes (5.0/1.0)
+|   |   |   |   |   |   |   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT > 0: yes (2.0)
+|   |   |   |   |   |   |   MENTION_TITLE_BANG_COUNT > 0: yes (2.0)
+|   |   |   |   |   |   MENTION_HTML_ATAG_HREF_UNIQCOUNT > 7: no (6.0)
+|   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ > 17
+|   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT <= 19: no (63.0/1.0)
+|   |   |   |   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT > 19
+|   |   |   |   |   |   |   COMPOSITE_TEST <= 4854: no (2.0)
+|   |   |   |   |   |   |   COMPOSITE_TEST > 4854: yes (2.0)
+|   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 15: no (61.0/22.0)
+|   |   |   MENTION_TEXT_PHRASE_DICT_SPAM_COUNT > 27
+|   |   |   |   MENTION_TEXT_SENTENCE_COUNT <= 85
+|   |   |   |   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT <= 0
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ <= 49
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT <= 7
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT <= 9: no (2.0)
+|   |   |   |   |   |   |   |   MENTION_HTML_ATAG_HREF_COUNT > 9: yes (2.0)
+|   |   |   |   |   |   |   MENTION_TITLE_WORD_COUNT > 7: yes (11.0)
+|   |   |   |   |   |   MENTION_TEXT_WORD_MOSTFREQ > 49: no (2.0)
+|   |   |   |   |   MENTION_TITLE_PHRASE_DICT_SPAM_COUNT > 0: yes (7.0)
+|   |   |   |   MENTION_TEXT_SENTENCE_COUNT > 85: no (6.0)
+|   |   MENTION_TEXT_PHRASE_DICT_SPAM_UNIQCOUNT > 36: yes (14.0)
+
+Number of Leaves  : 	136
+
+Size of the tree : 	271
+
+
+Time taken to build model: 1.32 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances       10846               96.5376 %
+Incorrectly Classified Instances       389                3.4624 %
+Kappa statistic                          0.836 
+Mean absolute error                      0.0644
+Root mean squared error                  0.1794
+Relative absolute error                 27.6872 %
+Root relative squared error             52.624  %
+Total Number of Instances            11235     
+
+=== Detailed Accuracy By Class ===
+
+TP Rate   FP Rate   Precision   Recall  F-Measure   Class
+  0.997     0.238      0.964     0.997     0.98     no
+  0.762     0.003      0.975     0.762     0.855    yes
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9696   30 |    a = no
+  359 1150 |    b = yes
+
+

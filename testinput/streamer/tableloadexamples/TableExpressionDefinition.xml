@@ -1,0 +1,42 @@
+<?xml version="1.0"?><!DOCTYPE PSum SYSTEM "streamer.dtd">
+<PSum failScore="100">
+    <Comment>
+        This is a test table meta for
+    </Comment>
+    <Description language="en">Confidential Employee data</Description>
+    <Description language="de">Konfidential mitarbeiter daten</Description>
+
+    <PSumOperand score="100">
+        <Comment>
+            Fetch the single field that is a credit card number and condition it,
+            so that is looks like: nnnn nnnn nnnn nnnn. Optionally will do a mod 11
+            check and if its invalid spew out a warning about the content to the log.
+        </Comment>
+        <And>
+            <NextToOrdered>
+                <Description language="en">Credit card details</Description>
+                <Description language="de">Credit Karte</Description>
+                <Field>CreditCardNumber</Field>
+            </NextToOrdered>
+            <NextToOrdered>
+                <Description language="en">Credit card details V 2</Description>
+                <Description language="de">Credit Karte V 2</Description>
+                <Field>CreditCardNumber</Field>
+            </NextToOrdered>
+        </And>
+    </PSumOperand>
+    <PSumOperand score="100">
+        <Comment>
+            Demonstration of looking for a fist and last name within 10 words of
+            each other. Since the first and last name are in seperate fields they
+            are fetched and merged with a space as the seperator before
+            passing onto the name formatter which simply lower cases the string.
+        </Comment>
+        <Near>
+            <Description language="en">Employee name</Description>
+            <Description language="de">Mitarbeiter namen</Description>
+            <Field>PersonName</Field>
+            <Proximity>10</Proximity>
+        </Near>
+    </PSumOperand>
+</PSum>
