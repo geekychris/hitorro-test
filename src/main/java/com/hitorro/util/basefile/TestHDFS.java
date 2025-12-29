@@ -57,7 +57,7 @@ import java.net.URL;
 import java.util.Date;
 
 /**
- * ht.util.file.TestHDFS
+ * com.hitorro.util.file.TestHDFS
  */
 @HTTest(runlevel = RunLevel.Never,
         email = "chris@hitorro.com",

@@ -33,6 +33,7 @@ import com.hitorro.util.json.keys.propaccess.PropaccessError;
 import com.hitorro.util.testframework.EnhancedTestCase;
 import com.hitorro.util.testframework.HTTest;
 import com.hitorro.util.testframework.RunLevel;
+import com.hitorro.util.testframework.TestPlus;
 
 import java.io.File;
 
@@ -97,7 +98,7 @@ public abstract class DumpLoadTest extends EnhancedTestCase {
         m_classSimpleName = m_class.getSimpleName();
 
         /*   clean up outputdir   */
-        File outputDir = new File(getOutputTreeRoot(), getClassPathAsPath(m_class, true));
+        File outputDir = new File(TestPlus.getOutputTreeRoot(), TestPlus.getClassPathAsPath(m_class, true));
         //FileUtil.deleteDirectoryContent(outputDir, true);
         outputDir.mkdirs();
 
@@ -110,7 +111,7 @@ public abstract class DumpLoadTest extends EnhancedTestCase {
         m_resultsProperties = new File(outputDir, resultsFilename);
 
         /*   define canonical input dumpfile name   */
-        File inputDir = new File(getInputTreeRoot(), getClassPathAsPath(m_class, true));
+        File inputDir = new File(getInputTreeRoot(), TestPlus.getClassPathAsPath(m_class, true));
         String canonFilename = StringUtil.strcat(File.separator, m_classSimpleName, ".v", m_BuildVersionKey.apply(), ".canon.dmp");
         m_canonDumpFile = new File(inputDir, canonFilename);
 

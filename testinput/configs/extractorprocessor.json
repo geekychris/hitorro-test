@@ -3,12 +3,12 @@
     "channels": {
       "docs": {
         "source": {
-          "impl": "ht.basedms.docprocessing.HDFSDocprocessEnqueue",
+          "impl": "com.hitorro.basedms.docprocessing.HDFSDocprocessEnqueue",
           "lgkname": "${ht_home}/queuekeys/extractors.lgk",
           "root": "file://${ht_home}/queue/docs"
         },
         "target": {
-          "impl": "ht.basedms.docprocessing.ECSinkTarget",
+          "impl": "com.hitorro.basedms.docprocessing.ECSinkTarget",
           "segment": "features"
         }
       }

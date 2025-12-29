@@ -42,6 +42,7 @@ import com.hitorro.util.osprocessexec.TerminationKey;
 import com.hitorro.util.startupframework.HTServer;
 import com.hitorro.util.testframework.EnhancedTestCase;
 import com.hitorro.util.testframework.RunLevel;
+import com.hitorro.util.testframework.TestPlus;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -161,7 +162,7 @@ public class TypeSystemTestUtil implements TerminationKey {
         int exitCode = LoadStatusFailure;
 
         /*  derive output filepathname.   */
-        File outputFilePath = EnhancedTestCase.getOutputFileRelativeForClass("", invokingClass, true);
+        File outputFilePath = TestPlus.getOutputFileRelativeForClass("", invokingClass, true);
         String className = invokingClass.getSimpleName();
 
         try {
@@ -170,7 +171,7 @@ public class TypeSystemTestUtil implements TerminationKey {
             JavaExecWrapper ew = getLoadExecWrapper(dbUsername, dbPassword, dbUrl, invokingClass);
 
             Map<String, String> map = new HashMap<String, String>();
-            String ptHomeDir = new File(EnhancedTestCase.getOutputTreeRoot(), EnhancedTestCase.getClassPathAsPath(invokingClass, true)).toString();
+            String ptHomeDir = new File(TestPlus.getOutputTreeRoot(), TestPlus.getClassPathAsPath(invokingClass, true)).toString();
 
             map.put("HT_HOME", ptHomeDir);
             map.put("HT_BIN", Env.getBin().toString());

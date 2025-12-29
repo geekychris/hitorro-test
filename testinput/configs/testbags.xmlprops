@@ -3,7 +3,7 @@
         <classmeta isview="false" isdynamic="true" shortname="webpage"/>
         <fields>
             <id class="java.lang.Long">
-               <mapper class="ht.util.typesystem.valuesource.mapper.UrlHashMapper" srcfield="url" canonical="false"/>
+               <mapper class="com.hitorro.util.typesystem.valuesource.mapper.UrlHashMapper" srcfield="url" canonical="false"/>
             </id>
             <created class="java.lang.Long">
             </created>
@@ -38,7 +38,7 @@
 
         <fields>
             <publishedDate>
-               <mapper class="ht.util.typesystem.valuesource.mapper.UrlHashMapper" srcfield="url" canonical="false"/>
+               <mapper class="com.hitorro.util.typesystem.valuesource.mapper.UrlHashMapper" srcfield="url" canonical="false"/>
                <ft fulltext="true" displayname="urldisplay" lucenefield="url"/>
             </publishedDate>
         </fields> 

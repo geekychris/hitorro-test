@@ -1,63 +1,63 @@
 {
   "extractors": {
     "followingcount": {
-      "class": "ht.features.extractor.baseextractors.IntFieldExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.IntFieldExtractor",
       "description": "",
       "props": {
         "field": "followerscount"
       }
     },
     "friendscount": {
-      "class": "ht.features.extractor.baseextractors.IntFieldExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.IntFieldExtractor",
       "description": "",
       "props": {
         "field": "friendscount"
       }
     },
     "hashfreq": {
-      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.TokTypeCounterExtractor",
       "description": "",
       "props": {
         "compute": "hash"
       }
     },
     "reffreq": {
-      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.TokTypeCounterExtractor",
       "description": "",
       "props": {
         "compute": "ref"
       }
     },
     "responsefreq": {
-      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.TokTypeCounterExtractor",
       "description": "",
       "props": {
         "compute": "response"
       }
     },
     "statuscount": {
-      "class": "ht.features.extractor.baseextractors.IntFieldExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.IntFieldExtractor",
       "description": "",
       "props": {
         "field": "statuscount"
       }
     },
     "urifreq": {
-      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.TokTypeCounterExtractor",
       "description": "",
       "props": {
         "compute": "uri"
       }
     },
     "wordcount": {
-      "class": "ht.features.extractor.baseextractors.WordCount",
+      "class": "com.hitorro.features.extractor.baseextractors.WordCount",
       "description": "",
       "props": {
         "compute": "uniquewords"
       }
     },
     "wordfreq": {
-      "class": "ht.features.extractor.baseextractors.TokTypeCounterExtractor",
+      "class": "com.hitorro.features.extractor.baseextractors.TokTypeCounterExtractor",
       "description": "",
       "props": {
         "compute": "word"
@@ -131,11 +131,11 @@
   },
   "mappers": {
     "floatnorm": {
-      "class": "ht.features.io.normalizer.FloatLogNorm",
+      "class": "com.hitorro.features.io.normalizer.FloatLogNorm",
       "foo": "bla"
     },
     "similaritycompressor": {
-      "class": "ht.features.io.compressor.SimilarityCompressor",
+      "class": "com.hitorro.features.io.compressor.SimilarityCompressor",
       "foo": "bla"
     }
   }

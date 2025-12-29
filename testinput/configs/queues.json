@@ -6,7 +6,7 @@
     },
     "features": {
       "partitioner": {
-        "class": "ht.features.FeatureDatePartitioner"
+        "class": "com.hitorro.features.FeatureDatePartitioner"
       },
       "queuedir": "file://${ht_home}/queue/features",
       "tmpdir": "${ht_home}/tmpqueue/features"

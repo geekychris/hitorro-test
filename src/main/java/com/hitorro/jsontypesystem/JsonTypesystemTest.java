@@ -49,7 +49,7 @@ public class JsonTypesystemTest extends EnhancedTestCase {
     /**
      * XXX TODO make this a proper test!!!!
      */
-    public static void test() {
+    public  void test() {
         try {
 
             HTJWNLDictionary dict = HTJWNLDictionary.me.get();

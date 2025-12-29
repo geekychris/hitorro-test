@@ -28,7 +28,7 @@
           },
           "mapper": {
             "canonical": "false",
-            "class": "ht.util.typesystem.valuesource.mapper.UrlHashMapper",
+            "class": "com.hitorro.util.typesystem.valuesource.mapper.UrlHashMapper",
             "srcfield": "url"
           }
         }
@@ -68,7 +68,7 @@
           "class": "java.lang.Long",
           "mapper": {
             "canonical": "false",
-            "class": "ht.util.typesystem.valuesource.mapper.UrlHashMapper",
+            "class": "com.hitorro.util.typesystem.valuesource.mapper.UrlHashMapper",
             "srcfield": "url"
           }
         },

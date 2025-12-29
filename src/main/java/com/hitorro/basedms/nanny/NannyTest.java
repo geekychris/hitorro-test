@@ -120,7 +120,7 @@ public class NannyTest extends EnhancedTestCase implements TerminationKey {
         Map<String, String> args = new HashMap<String, String>();
 
         args.put("keepalive", "10");
-        args.put("command", "ht.util.service.HTServer");
+        args.put("command", "com.hitorro.util.service.HTServer");
         args.put("servertype", "hello");
 
 
