@@ -85,79 +85,10 @@ public class JsonTypesystemTest extends EnhancedTestCase {
             Propaccess pa = new Propaccess("dates.created");
             com.hitorro.jsontypesystem.Field f1 = t2.getField(pa);
             com.hitorro.jsontypesystem.Field f2 = t2.getField(pa, 0);
-            Propaccess.test();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-    }
-
-    public void testSpacy() throws Exception {
-        BaseFile f = Env.getBaseFile(new File("/Users/chris/foo.json"));
-        com.hitorro.jsontypesystem.JVS jvs = f.getJVS();
-        Console.println();
-    }
-}
-
-class SpacyPos extends SpacyText {
-    protected StringProperty lemmaP = new StringProperty("lemma", "", "");
-    protected String lemma;
-    protected String pos;
-    protected String tag;
-    protected String dep;
-    protected String ent;
-    protected String shape;
-    protected boolean is_alpha;
-    protected boolean is_oov;
-    protected boolean is_stop;
-    protected SpacyText left;
-    protected SpacyText right;
-    StringProperty posP = new StringProperty("pos", "", "");
-    StringProperty tagP = new StringProperty("tag", "", "");
-    StringProperty depP = new StringProperty("dep", "", "");
-    StringProperty entP = new StringProperty("ent", "", "");
-    StringProperty shapeP = new StringProperty("shape", "", "");
-    BooleanProperty is_alphaP = new BooleanProperty("is_alpha", "", false);
-    BooleanProperty is_oovP = new BooleanProperty("is_oov", "", false);
-    BooleanProperty is_stopP = new BooleanProperty("is_stop", "", false);
-    //"conjuncts": [],
-
-    @Override
-    public boolean init(JsonNode node) {
-        left = (SpacyText) new SpacyText().consume("left", node);
-        right = (SpacyText) new SpacyText().consume("right", node);
-        lemma = lemmaP.apply(node);
-        pos = posP.apply(node);
-        tag = tagP.apply(node);
-        dep = depP.apply(node);
-        ent = entP.apply(node);
-        shape = shapeP.apply(node);
-        is_alpha = is_alphaP.apply(node);
-        is_oov = is_oovP.apply(node);
-        is_stop = is_stopP.apply(node);
-        return true;
-    }
-}
-
-class SpacyText implements JsonInitable {
-    protected String text;
-    protected int orth;
-    StringProperty textP = new StringProperty("text", "", "");
-    IntegerProperty orthP = new IntegerProperty("orth", "", 1);
-
-    @Override
-    public boolean init(JsonNode node) {
-        text = textP.apply(node);
-        orth = orthP.apply(node);
-        return false;
-    }
-}
-
-class SpacySentence implements JsonInitable {
-
-    @Override
-    public boolean init(JsonNode node) {
-        return false;
     }
 }
