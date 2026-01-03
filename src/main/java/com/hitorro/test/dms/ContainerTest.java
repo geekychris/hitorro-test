@@ -31,6 +31,7 @@ import com.hitorro.util.testframework.RunLevel;
 import com.hitorro.util.typesystem.BaseSession;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 
 /**
@@ -76,14 +77,16 @@ public class ContainerTest extends EnhancedTestCase {
         container.setSession(sessContainer);
         Iterator<Object[]> soIter = container.getIterator();
         int i = 0;
+		HashSet<String> found = new HashSet<String>();
         while (soIter.hasNext()) {
             Object a = soIter.next();
             VersionableObject so = (VersionableObject) a;
+			found.add(so.getGuid());
             assertNotNull(map.get(so.getGuid()));
             i++;
         }
         assertEquals(map.size(), i);
-        DMSSessionFactory.getFactory().rollbackCloseSession(sessContainer);
+        //DMSSessionFactory.getFactory().rollbackCloseSession(sessContainer);
     }
 
     private Document createDoc(BaseSession sess, HashMap<String, String> map, Container container, Container secondContainer) {

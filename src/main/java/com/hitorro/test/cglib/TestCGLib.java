@@ -49,8 +49,9 @@ public class TestCGLib extends EnhancedTestCase {
         GenericAnalyzer ga = new GenericAnalyzer("standard, snowballstemmer ", Iso639Table.english, GenericAnalyzer.Mode.Index);
         StringReader sr = new StringReader(tst);
         TokenStream ts = ga.tokenStream("tst", sr);
+		ts.reset();
         CharTermAttribute termAttribute = ts.getAttribute(CharTermAttribute.class);
-        while (ts.incrementToken()) {
+		while (ts.incrementToken()) {
             String t = termAttribute.toString();
             Console.println("token: %s", t);
         }

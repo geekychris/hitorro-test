@@ -28,12 +28,14 @@ import com.hitorro.basedms.db.executor.Result;
 import com.hitorro.basedms.db.executor.ResultTable;
 import com.hitorro.basedms.db.executor.Script;
 import com.hitorro.jsontypesystem.propreaders.JVSProperties;
+import com.hitorro.util.core.Env;
 import com.hitorro.util.core.params.HTProperties;
 import com.hitorro.util.json.keys.propaccess.PropaccessError;
 import com.hitorro.util.testframework.EnhancedTestCase;
 import com.hitorro.util.testframework.HTTest;
 import com.hitorro.util.testframework.RunLevel;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -52,6 +54,7 @@ public class ExecuteScriptTest extends EnhancedTestCase {
     private static final String TEST_SCRIPT_MULTI_STATEMENT = "test_multi_statement.sql";
     private static final String TEST_SCRIPT_INSERT = "test_insert.sql";
     private static final String TEST_SCRIPT_UPDATE = "test_update.sql";
+	private static final String TEST_DROP_TABLE= "drop_table.sql";
     private static final String TEST_SCRIPT_CREATE_TABLE = "test_create_table.sql";
 
     //  Property Names & Values for Variable Resolution
@@ -133,7 +136,8 @@ public class ExecuteScriptTest extends EnhancedTestCase {
         properties.setProperty(Script.PROPERTY_TABLE_NAME, TEST_TABLE_NAME);
 
         Executor executor = createExecutor(properties);
-        Script script = new Script(Script.SCRIPT_DROP_TABLE);
+
+        Script script = new Script(getInputFileRelative(TEST_DROP_TABLE));
 
         executor.execute(script, properties);
 
@@ -143,6 +147,9 @@ public class ExecuteScriptTest extends EnhancedTestCase {
         assertTrue(rowsAffected == 0);
 
     }
+	private File getRoot(){
+		return Env.getBin();
+	}
 
 
     /**
