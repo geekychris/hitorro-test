@@ -254,7 +254,7 @@ public class CoreUtilTest extends EnhancedTestCase {
     public void testSimpleExec() {
         StringBuilder result = new StringBuilder();
         try {
-            String execThis = Fmt.P("${os_bin_dir}time");
+            String execThis = Fmt.P("${os_bin_dir}date");
             SimpleExec.exec(execThis, result, true);
         } catch (Exception e) {
             assertAlways("Blew up testing simple exec");
