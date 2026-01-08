@@ -60,11 +60,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
- * <p/>
- * User: chris
- */
+
 @HTTest(runlevel = RunLevel.Never,
         email = "chris@hitorro.com",
         description = "Test transformation services",
