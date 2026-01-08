@@ -41,7 +41,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: Chris Date: Nov 16, 2006 Time: 5:56:15 PM
  * <p/>
  * Test the Execution of SQL Scripts
  */

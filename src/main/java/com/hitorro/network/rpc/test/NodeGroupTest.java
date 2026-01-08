@@ -36,7 +36,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 29, 2005 Time: 7:08:28 PM
  */
 @HTTest(runlevel = RunLevel.Full,
         email = "chris@hitorro.com",

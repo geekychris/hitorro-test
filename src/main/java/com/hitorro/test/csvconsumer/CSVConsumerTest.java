@@ -36,7 +36,6 @@ import java.util.List;
 
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Feb 9, 2005 Time: 10:33:04 AM
  */
 
 @HTTest(runlevel = RunLevel.Smoke,

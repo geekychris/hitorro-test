@@ -51,7 +51,6 @@ import java.util.List;
 
 
 /**
- * Copyright (c) 2003 - 2009 HiTorro All rights reserved. User: chris Date: Mar 9, 2009 Time: 3:38:46 PM
  * <p/>
  * using a model graph in text form that we can create a simple link index and query for back references
  * <p/>

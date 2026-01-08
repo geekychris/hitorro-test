@@ -39,7 +39,6 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris Date: Nov 3, 2006 Time: 6:36:12 PM
  * <p/>
  * test categories, caches, and lookup.

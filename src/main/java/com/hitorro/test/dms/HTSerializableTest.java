@@ -38,7 +38,6 @@ import java.sql.SQLException;
 import java.util.Date;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 25, 2006 Time: 5:53:22 PM
  */
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",

@@ -36,7 +36,6 @@ import java.io.StringReader;
 
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris Date: Nov 21, 2006 Time: 8:13:00 PM
  */
 

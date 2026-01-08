@@ -38,7 +38,6 @@ import java.awt.*;
 import java.io.File;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Feb 12, 2005 Time: 8:42:20 AM
  */
 
 @HTTest(runlevel = RunLevel.Smoke,

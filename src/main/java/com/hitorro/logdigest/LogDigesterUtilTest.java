@@ -33,7 +33,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Dec 28, 2005 Time: 10:30:12 AM
  */
 @HTTest(runlevel = RunLevel.Never,
         email = "chris@hitorro.com",

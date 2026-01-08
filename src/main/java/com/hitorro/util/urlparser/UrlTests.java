@@ -27,7 +27,6 @@ import com.hitorro.util.testframework.HTTest;
 import com.hitorro.util.testframework.RunLevel;
 
 /**
- * com.hitorro.util.url.UrlTests Copyright (c) 2003 - present HiTorro All rights reserved. User: chris
  */
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",

@@ -35,7 +35,6 @@ import com.hitorro.util.typesystem.constraint.IsFullTextable;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 16, 2006 Time: 9:07:00 AM
  */
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",

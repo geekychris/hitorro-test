@@ -24,7 +24,6 @@ package com.hitorro.test.cglib;
 import com.hitorro.util.typesystem.valuesource.ValueSourceField;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris Date: Nov 22, 2006 Time: 9:07:02 AM
  */
 public class VLong extends ValueSourceField {

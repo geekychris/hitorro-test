@@ -41,7 +41,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 27, 2006 Time: 5:19:18 PM Tests for
  * object versioning.
  */
 @HTTest(runlevel = RunLevel.Smoke,

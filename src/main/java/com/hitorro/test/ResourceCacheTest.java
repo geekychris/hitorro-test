@@ -37,7 +37,6 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Dec 19, 2006 Time: 8:16:16 AM
  */
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",

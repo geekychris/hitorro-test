@@ -22,7 +22,6 @@
 package com.hitorro.test;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris Date: Nov 21, 2006 Time: 7:41:58 PM
  */
 public class TestBooleanSetterGetter {

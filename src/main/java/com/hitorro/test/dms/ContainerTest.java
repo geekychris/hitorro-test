@@ -35,7 +35,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 31, 2006 Time: 6:39:16 PM Tests related
  * to Containers of objects.
  */
 @HTTest(runlevel = RunLevel.Smoke,

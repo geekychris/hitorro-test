@@ -22,7 +22,6 @@
 package com.hitorro.basedms.rss;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris
  * Date: Oct 13, 2006
  * Time: 12:29:42 PM

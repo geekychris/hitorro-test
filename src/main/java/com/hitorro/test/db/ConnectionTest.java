@@ -34,7 +34,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: Chris Date: Nov 16, 2006 Time: 5:17:54 PM
  * <p/>
  * Test Database Connectivity
  */

@@ -32,7 +32,6 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris Date: Oct 25, 2006 Time: 7:17:21 PM
  */
 

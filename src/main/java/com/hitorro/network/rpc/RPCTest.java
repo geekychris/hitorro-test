@@ -32,7 +32,6 @@ import com.hitorro.util.testframework.RunLevel;
 import java.io.IOException;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Dec 8, 2006 Time: 2:39:27 PM Test syncronous
  * rpc call to ourselfs. async (UDP) status message callback.  using point to point, and local + global multicast.
  */
 @HTTest(runlevel = RunLevel.Full,

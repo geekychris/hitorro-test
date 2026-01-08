@@ -22,7 +22,6 @@
 package com.hitorro.test.cglib;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved.
  * User: chris Date: Nov 21, 2006 Time: 9:28:19 AM
  */
 public class TestSetterGetter {

@@ -44,7 +44,6 @@ import java.util.HashMap;
 
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: rmonaghan Date: Dec 3, 2006 Time: 3:28:47 PM
  */
 @HTTest(runlevel = RunLevel.Never,
         email = "chris@hitorro.com",

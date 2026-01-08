@@ -47,7 +47,6 @@ import java.util.Comparator;
 import java.util.Date;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Feb 1, 2005 Time: 10:10:12 AM
  */
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",

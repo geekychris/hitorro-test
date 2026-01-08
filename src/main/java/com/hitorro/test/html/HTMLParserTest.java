@@ -37,7 +37,6 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * Copyright (c) 2003 - present HiTorro All rights reserved. User: chris Date: Oct 15, 2006 Time: 5:42:53 PM
  */
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",
