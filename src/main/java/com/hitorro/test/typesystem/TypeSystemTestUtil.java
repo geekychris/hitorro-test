@@ -68,7 +68,7 @@ public class TypeSystemTestUtil implements TerminationKey {
 
     /*   spawned HTServer process compContext-related callback variables   */
     private boolean m_execDone = false;
-    private int m_execExitCode;
+    private int execExitCode;
 
 
     /**
@@ -189,7 +189,7 @@ public class TypeSystemTestUtil implements TerminationKey {
 
                 if ((exitCode != LoadStatusSuccess) ||
                         (m_execDone != true) ||
-                        (m_execExitCode != LoadStatusSuccess)) {
+                        (execExitCode != LoadStatusSuccess)) {
                     Log.test.error("load failure.  exitCode = %s; execDone = %s", Integer.toString(exitCode), Boolean.toString(m_execDone));
                 }
             } catch (InterruptedException e) {
@@ -317,7 +317,7 @@ public class TypeSystemTestUtil implements TerminationKey {
      */
     public void complete(int exitCode) {
         m_execDone = true;
-        m_execExitCode = exitCode;
+        execExitCode = exitCode;
     }
 
 }

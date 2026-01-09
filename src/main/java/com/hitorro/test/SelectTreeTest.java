@@ -82,14 +82,14 @@ public class SelectTreeTest extends EnhancedTestCase {
                 new HTSerializableFileBucketWriter<NonPersistObject>(10000, dir, fileExtension, getFactory());
         for (int i = iters; i > 0; i--) {
             NonPersistObject npo = new NonPersistObject();
-            npo.m_int = i;
+            npo.int_ = i;
             npo.m_date = new Date();
             npo.m_string = Fmt.S("Number: %s", i);
 
             if (i % 102 == 0) {
                 // lets put some dupes in.
                 NonPersistObject npo2 = new NonPersistObject();
-                npo2.m_int = i + 55;
+                npo2.int_ = i + 55;
                 npo2.m_date = new Date();
                 writer.add(npo2);
             }
@@ -112,13 +112,13 @@ public class SelectTreeTest extends EnhancedTestCase {
 
         NonPersistObject npo = iter.next();
         assertNotNull(npo);
-        int prev = npo.m_int;
+        int prev = npo.int_;
         while (iter.hasNext()) {
 
             npo = iter.next();
             assertNotNull(npo);
             count++;
-            int curI = npo.m_int;
+            int curI = npo.int_;
             if (curI <= prev) {
                 assertAlways("expected next value to be greater than previous");
             }
@@ -134,7 +134,7 @@ public class SelectTreeTest extends EnhancedTestCase {
 class NPOComp implements Comparator<NonPersistObject> {
 
     public int compare(NonPersistObject nonPersistObject, NonPersistObject nonPersistObject1) {
-        return nonPersistObject.m_int - nonPersistObject1.m_int;
+        return nonPersistObject.int_ - nonPersistObject1.int_;
     }
 }
 

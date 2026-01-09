@@ -43,18 +43,18 @@ import java.io.File;
         description = "Dump and load tests")
 public abstract class DumpLoadTest extends EnhancedTestCase {
     /*   build version; invoking testcase properties  */
-    protected static final StringProperty m_BuildVersionKey = new StringProperty("build.version", "default build version", null);
+    protected static final StringProperty BuildVersionKey = new StringProperty("build.version", "default build version", null);
     protected final StringProperty m_invokingClassKey = new StringProperty("test.invokingclass", "class that invokes LoadLoadTest", null);
     /*   testcase-specific files   */
     protected File m_dumpFile;
-    protected File m_resultsProperties;
-    protected File m_canonDumpFile;
-    protected File m_canonResultsProperties;
+    protected File resultsProperties;
+    protected File canonDumpFile;
+    protected File canonResultsProperties;
     /*   track the class 'responsible' for the testcase.   for DumpLoadTest, 'this' is not always sufficient.  */
-    protected String m_classSimpleName;
+    protected String classSimpleName;
     protected Class m_class;
     protected String m_invokingClass = m_invokingClassKey.apply();
-    protected JsonNode m_connectInfo;
+    protected JsonNode connectInfo;
 
 
     /* jdbc database connection properties  */
@@ -77,10 +77,10 @@ public abstract class DumpLoadTest extends EnhancedTestCase {
          */
 
         try {
-            m_connectInfo = DatabaseUtil.getConnectionInfoMap(JVSProperties.getProperties());
-            m_rootUsername = DatabaseUtil.RootUsernameKey.apply(m_connectInfo);
-            m_rootPassword = DatabaseUtil.RootPasswordKey.apply(m_connectInfo);
-            m_url = DatabaseUtil.DatabaseUrlKey.apply(m_connectInfo);
+            connectInfo = DatabaseUtil.getConnectionInfoMap(JVSProperties.getProperties());
+            m_rootUsername = DatabaseUtil.RootUsernameKey.apply(connectInfo);
+            m_rootPassword = DatabaseUtil.RootPasswordKey.apply(connectInfo);
+            m_url = DatabaseUtil.DatabaseUrlKey.apply(connectInfo);
         } catch (PropaccessError e) {
             fail(Fmt.S("Unable to initalize parameters %s", e));
         }
@@ -95,7 +95,7 @@ public abstract class DumpLoadTest extends EnhancedTestCase {
             m_class = this.getClass();
         }
 
-        m_classSimpleName = m_class.getSimpleName();
+        classSimpleName = m_class.getSimpleName();
 
         /*   clean up outputdir   */
         File outputDir = new File(TestPlus.getOutputTreeRoot(), TestPlus.getClassPathAsPath(m_class, true));
@@ -103,21 +103,21 @@ public abstract class DumpLoadTest extends EnhancedTestCase {
         outputDir.mkdirs();
 
         /*   define output dumpfile name.   */
-        String dumpFilename = StringUtil.strcat(File.separator, m_classSimpleName, ".v", m_BuildVersionKey.apply(), ".dmp");
+        String dumpFilename = StringUtil.strcat(File.separator, classSimpleName, ".v", BuildVersionKey.apply(), ".dmp");
         m_dumpFile = new File(outputDir, dumpFilename);
 
         /*   define output query results properties file.   */
-        String resultsFilename = StringUtil.strcat(File.separator, m_classSimpleName, ".properties");
-        m_resultsProperties = new File(outputDir, resultsFilename);
+        String resultsFilename = StringUtil.strcat(File.separator, classSimpleName, ".properties");
+        resultsProperties = new File(outputDir, resultsFilename);
 
         /*   define canonical input dumpfile name   */
         File inputDir = new File(getInputTreeRoot(), TestPlus.getClassPathAsPath(m_class, true));
-        String canonFilename = StringUtil.strcat(File.separator, m_classSimpleName, ".v", m_BuildVersionKey.apply(), ".canon.dmp");
-        m_canonDumpFile = new File(inputDir, canonFilename);
+        String canonFilename = StringUtil.strcat(File.separator, classSimpleName, ".v", BuildVersionKey.apply(), ".canon.dmp");
+        canonDumpFile = new File(inputDir, canonFilename);
 
         /*   define canonical query results properties file.   */
-        String canonResultsFilename = StringUtil.strcat(File.separator, m_classSimpleName, "canon.properties");
-        m_canonResultsProperties = new File(inputDir, canonResultsFilename);
+        String canonResultsFilename = StringUtil.strcat(File.separator, classSimpleName, "canon.properties");
+        canonResultsProperties = new File(inputDir, canonResultsFilename);
     }
 
 
@@ -161,10 +161,10 @@ public abstract class DumpLoadTest extends EnhancedTestCase {
      * that in turn runs a DumpLoad testcase and drop into testLoadLoad testcase.
      */
     public void testLoadLoad() {
-        boolean results = typeSystemTestUtil.loadLoad(m_canonDumpFile);
+        boolean results = typeSystemTestUtil.loadLoad(canonDumpFile);
 
         if (!results) {
-            fail(Fmt.S("failure to load dumpfile %s", m_canonDumpFile));
+            fail(Fmt.S("failure to load dumpfile %s", canonDumpFile));
         }
     }
 

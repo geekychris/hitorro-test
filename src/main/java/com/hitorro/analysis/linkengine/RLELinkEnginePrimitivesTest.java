@@ -209,7 +209,7 @@ public class RLELinkEnginePrimitivesTest extends EnhancedTestCase {
     }
 
     public void assertReaderTuples(LinkTupleReader a, LinkTupleReader b) {
-        assertEquals(a.m_readerDocumentId, b.m_readerDocumentId);
+        assertEquals(a.readerDocumentId, b.readerDocumentId);
         assertEquals(a.m_typeCode, b.m_typeCode);
         if (LinkTupleReader.hasMetric(a.m_typeCode)) {
             assertEquals(a.m_metric, b.m_metric);

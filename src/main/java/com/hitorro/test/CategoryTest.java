@@ -53,7 +53,7 @@ import java.util.List;
         description = "Test the category lookup cache mechanisms.")
 public class CategoryTest extends EnhancedTestCase {
     public String m_guid;
-    public String m_guidM3;
+    public String guidM3;
 
     public void testDomainValueCache() {
         ValueMap<Category> cats = DomainValueCache.getCache().get("testcat");
@@ -106,7 +106,7 @@ public class CategoryTest extends EnhancedTestCase {
             try {
                 m3.addCategory("label", "release");
                 m3.addCategory("testcat", "release");
-                m_guidM3 = m3.getGuid();
+                guidM3 = m3.getGuid();
 
             } catch (CategoryException e) {
                 assertAlways("Unable to setPhrases label for m3");
@@ -134,7 +134,7 @@ public class CategoryTest extends EnhancedTestCase {
             List<Document> list = q.list();
             assertEquals(list.size(), 1);
             Document taggedDoc = list.get(0);
-            assertEquals(m_guidM3, taggedDoc.getGuid());
+            assertEquals(guidM3, taggedDoc.getGuid());
             //ensure testcat, release has 2 docs as thats how many we tagged
             DMSSessionFactory.getFactory().rollbackCloseSession(s2);
             BaseSession s3 = DMSSessionFactory.getFactory().getSession();

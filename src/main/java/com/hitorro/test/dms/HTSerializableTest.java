@@ -88,10 +88,10 @@ public class HTSerializableTest extends EnhancedTestCase {
             assertEquals(b.m_string, bLoad.m_string);
 
             assertEquals(datea, a.m_date);
-            assertEquals(numberA, a.m_int);
+            assertEquals(numberA, a.int_);
             assertEquals(stringA, a.m_string);
             assertEquals(dateb, b.m_date);
-            assertEquals(numberB, b.m_int);
+            assertEquals(numberB, b.int_);
             assertEquals(stringB, b.m_string);
 
             NonPersistObject bLoadPrime = aLoad.m_ref;
@@ -136,7 +136,7 @@ public class HTSerializableTest extends EnhancedTestCase {
             assertNotNull(npo2);
             assertEquals(a.m_date, npo2.m_date);
             assertEquals(a.m_string, npo2.m_string);
-            assertEquals(a.m_int, npo2.m_int);
+            assertEquals(a.int_, npo2.int_);
             DMSSessionFactory.getFactory().rollbackCloseSession(s2);
         } catch (IOException e) {
             this.assertAlways("Unable to persist PSO %s %e", e, e);

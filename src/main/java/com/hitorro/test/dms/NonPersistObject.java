@@ -42,8 +42,8 @@ import java.util.Date;
 public class NonPersistObject implements HTSerializable {
     public String m_string;
     public Date m_date;
-    public int m_int;
-    public boolean m_bool;
+    public int int_;
+    public boolean bool;
     public NonPersistObject m_ref;
 
     /**
@@ -56,13 +56,13 @@ public class NonPersistObject implements HTSerializable {
     public NonPersistObject(String string, Date date, int i, boolean bool) {
         m_string = string;
         m_date = date;
-        m_int = i;
-        m_bool = bool;
+        this.int_ = i;
+        this.bool = bool;
 
     }
 
     public String toString() {
-        return Fmt.S("NPO: %s", m_int);
+        return Fmt.S("NPO: %s", int_);
     }
 
     public void set(NonPersistObject a) {
@@ -73,8 +73,8 @@ public class NonPersistObject implements HTSerializable {
         os.writeInt(getSerializationVersion());
         os.writeString(m_string);
         os.writeDate(m_date);
-        os.writeInt(m_int);
-        os.writeBoolean(m_bool);
+        os.writeInt(int_);
+        os.writeBoolean(bool);
         os.writeVersionedObject(m_ref);
     }
 
@@ -83,8 +83,8 @@ public class NonPersistObject implements HTSerializable {
         int version = os.readInt();
         m_string = os.readString();
         m_date = os.readDate();
-        m_int = os.readInt();
-        m_bool = os.readBoolean();
+        int_ = os.readInt();
+        bool = os.readBoolean();
         m_ref = (NonPersistObject) os.readVersionedObject();
     }
 
