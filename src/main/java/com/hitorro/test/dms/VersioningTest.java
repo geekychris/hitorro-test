@@ -47,6 +47,51 @@ import java.util.List;
         email = "chris@hitorro.com",
         description = "Content related tests")
 public class VersioningTest extends EnhancedTestCase {
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        ensureDefaultStore();
+    }
+    
+    /**
+     * Ensure a default store exists for tests that need to create Content objects.
+     */
+    private void ensureDefaultStore() {
+        BaseSession session = DMSSessionFactory.getFactory().getSession();
+        try {
+            // Check if a default store already exists
+            com.hitorro.base.objects.Store defaultStore = 
+                (com.hitorro.base.objects.Store) session.getSingleObject(
+                    com.hitorro.base.objects.Store.class, " where defaultStore=true");
+            
+            if (defaultStore == null) {
+                // Create a default store for testing
+                defaultStore = new com.hitorro.base.objects.Store();
+                defaultStore.setName("default");
+                defaultStore.setDefaultStore(true);
+                defaultStore.setStoreType(com.hitorro.base.objects.StoreType.File.name());
+                defaultStore.setRootPath("/tmp/hitorro-test-store");
+                defaultStore.setDocRoot("");
+                defaultStore.setIsPubliclyVisible(true);
+                defaultStore.setOffline(false);
+                
+                // Ensure the directory exists
+                java.io.File storeDir = new java.io.File("/tmp/hitorro-test-store");
+                if (!storeDir.exists()) {
+                    storeDir.mkdirs();
+                }
+                
+                session.persist(defaultStore);
+                session.commit();
+                
+                Log.util.info("Test setUp: Created default store for testing");
+            }
+        } finally {
+            DMSSessionFactory.closeSession(session);
+        }
+    }
+    
     /**
      * Test major, minor and branch label names.
      */
