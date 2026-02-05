@@ -41,7 +41,7 @@ import java.io.File;
 import java.util.Date;
 import java.util.List;
 
-@HTTest(runlevel = RunLevel.Full,
+@HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",
         description = "Json Type System Test")
 public class JsonTypesystemTest extends EnhancedTestCase {
