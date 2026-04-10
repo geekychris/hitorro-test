@@ -23,9 +23,7 @@ package com.hitorro.analysis.text;
 
 import com.hitorro.util.core.string.Fmt;
 
-/**
- *
- */
+
 public class EmitterElem {
     public static final String csvcols[] = {"fp", "startPos", "size", "text", "val"};
 

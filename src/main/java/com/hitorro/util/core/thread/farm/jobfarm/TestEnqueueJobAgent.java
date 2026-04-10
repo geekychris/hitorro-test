@@ -24,9 +24,7 @@ package com.hitorro.util.core.thread.farm.jobfarm;
 import com.hitorro.util.core.iterator.queue.AbstractEnqueue;
 
 
-/**
- *
- */
+
 public class TestEnqueueJobAgent implements com.hitorro.util.core.thread.farm.jobfarm.JobFarmEnqueueAgent<TestJob, Integer, String> {
     public int executeEnqueue(TestJob testJob, AbstractEnqueue<com.hitorro.util.core.thread.farm.jobfarm.JobFarmElement<Integer, String, TestJob>> threadedQueue) {
         int val = testJob.getStart();

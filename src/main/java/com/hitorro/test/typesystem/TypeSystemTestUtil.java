@@ -276,7 +276,7 @@ public class TypeSystemTestUtil implements TerminationKey {
         try {
             args.set("file", dumpFile.toString());
             args.set("includecontent", "true");
-            results = load.execute(rawValue, args, response, null);
+            results = load.execute(rawValue, args.getJsonNode(), response, null);
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

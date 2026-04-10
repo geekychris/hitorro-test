@@ -61,7 +61,7 @@ public class JsonTypesystemTest extends EnhancedTestCase {
                 DynamicMapper dm = new DynamicMapper();
                 JsonNode n = bf.getJsonNode();
                 com.hitorro.jsontypesystem.JVS jvs = new com.hitorro.jsontypesystem.JVS(n);
-                com.hitorro.jsontypesystem.Type t = jvs.getType();
+                com.hitorro.jsontypesystem.Type t = (com.hitorro.jsontypesystem.Type) jvs.getType();
 
                 String text = jvs.getString("title.mls[en].text");
                 jvs.set("title.mls[2].segmented", "hello");

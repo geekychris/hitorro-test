@@ -23,9 +23,7 @@ package com.hitorro.analysis.text;
 
 import com.hitorro.util.core.iterator.Mapper;
 
-/**
- *
- */
+
 public class Emmitter2CSV implements Mapper<EmitterElem, String[]> {
     public static Emmitter2CSV e2csv = new Emmitter2CSV();
 

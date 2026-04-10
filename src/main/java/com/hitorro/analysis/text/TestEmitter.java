@@ -27,9 +27,7 @@ import com.hitorro.basetext.phrase.FPPhraseContext;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
+
 public class TestEmitter extends FPPhraseContext {
     public List<EmitterElem> list = new ArrayList();
 

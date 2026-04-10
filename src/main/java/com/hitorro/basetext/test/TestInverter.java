@@ -57,9 +57,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- */
+
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",
         description = "Test the text filters")

@@ -238,7 +238,7 @@ public class CoreUtilTest extends EnhancedTestCase {
         JVS top = new JVS();
         top.set("foo", "fudge");
         String a = Fmt.P("${os_bin_dir}java");
-        String b = Fmt.PO("${os_bin_dir}java${foo}", top);
+        String b = Fmt.PO("${os_bin_dir}java${foo}", top.getJsonNode());
         String ab = Fmt.S("%sfudge", a);
         assertEquals(b, ab);
     }

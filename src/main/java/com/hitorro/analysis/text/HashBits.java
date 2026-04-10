@@ -32,9 +32,7 @@ import com.hitorro.util.core.map.FPHashLongMap;
 import java.io.IOException;
 import java.text.ParseException;
 
-/**
- *
- */
+
 public class HashBits {
 
     WordBits bits;

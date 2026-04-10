@@ -27,9 +27,7 @@ import com.hitorro.util.json.keys.IntegerProperty;
 import com.hitorro.util.json.keys.LongProperty;
 import com.hitorro.util.json.keys.StringProperty;
 
-/**
- *
- */
+
 public class EmitterElemMapper implements Mapper<JsonNode, EmitterElem> {
     public static final LongProperty FpKey = new LongProperty("fp", "", 0l);
     public static final IntegerProperty StartKey = new IntegerProperty("startPos", "", 0);

@@ -50,9 +50,7 @@ import net.sf.jsqlparser.statement.select.Select;
 import java.io.IOException;
 import java.io.StringReader;
 
-/**
- *
- */
+
 @HTTest(runlevel = RunLevel.Full,
         email = "chris@hitorro.com",
         description = "Tests for sql latch ")

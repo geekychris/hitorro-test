@@ -32,9 +32,7 @@ import junit.framework.TestCase;
 import java.text.ParseException;
 import java.util.Date;
 
-/**
- *
- */
+
 @HTTest(runlevel = RunLevel.Smoke,
         email = "chris@hitorro.com",
         description = "Test date oriented util methods")
