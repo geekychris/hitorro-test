@@ -40,7 +40,7 @@ import java.io.IOException;
 public class RPCTest extends EnhancedTestCase {
     private int m_counter = 0;
 
-    public static final Callback register() {
+    public static Callback register() {
         Callback c = new Callback();
         com.hitorro.network.rpc.StatusRPC rpc = (com.hitorro.network.rpc.StatusRPC) com.hitorro.network.rpc.RPCService.s_service.getHandler(com.hitorro.network.rpc.StatusRPC.StatusRPCMethod);
         if (rpc == null) {
@@ -50,7 +50,7 @@ public class RPCTest extends EnhancedTestCase {
         return c;
     }
 
-    public static final void deregister(Callback c) {
+    public static void deregister(Callback c) {
         com.hitorro.network.rpc.StatusRPC rpc = (com.hitorro.network.rpc.StatusRPC) com.hitorro.network.rpc.RPCService.s_service.getHandler(com.hitorro.network.rpc.StatusRPC.StatusRPCMethod);
         if (rpc == null) {
             return;

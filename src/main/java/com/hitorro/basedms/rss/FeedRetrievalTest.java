@@ -39,7 +39,7 @@ import java.util.List;
         email = "chris@hitorro.com",
         description = "Content related tests")
 public class FeedRetrievalTest extends EnhancedTestCase {
-    public static String tstUrl = "http://tapestryjava.blogspot.com/feeds/posts/default?alt=rss";
+    public static final String tstUrl = "http://tapestryjava.blogspot.com/feeds/posts/default?alt=rss";
     com.hitorro.basedms.rss.FeedRetrieval feedRetrieval = new com.hitorro.basedms.rss.FeedRetrieval();
 
     /**

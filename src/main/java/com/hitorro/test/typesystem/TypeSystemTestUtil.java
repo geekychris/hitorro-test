@@ -58,7 +58,7 @@ public class TypeSystemTestUtil implements TerminationKey {
     public static final int LoadStatusFailure = -1;
     public static final int LoadStatusSuccess = 1;
     private static final String DestroyDBFilename = "destroyDB.txt";
-    public static final File DestroyDBSentinelFile = new File(Env.getHome().toString(), DestroyDBFilename);
+    public static File DestroyDBSentinelFile = new File(Env.getHome().toString(), DestroyDBFilename);
     /*   spawned HTServer process related constants   */
     private static final int ExecProcessWaitTime = 1000 * 60 * 3;        /*  3 minutes.  */
     private static final int ExecProcessNodeID = 666;

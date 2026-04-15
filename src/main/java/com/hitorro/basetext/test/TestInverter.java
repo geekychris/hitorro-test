@@ -65,7 +65,7 @@ public class TestInverter extends EnhancedTestCase {
     public static final String T = "The quick Brown fox Jumped over the lazy Dogs";
     public static final String T2 = "QuIck chris Fox blow a Dog";
 
-    public static String queryOld = "select s.guid as sysguid, c.guid as contguid from htcms.VersionableObject s, htcms.Content c, htcms.sysobject_contents sc where s.system_id= sc.system_id and c.content_id = sc.content_id and c.content_id in (select system_id from htcms.content_category cc where cc.domain=\"docparts\" and cc.value=\"reflinksnew\")";
+    public static final String queryOld = "select s.guid as sysguid, c.guid as contguid from htcms.VersionableObject s, htcms.Content c, htcms.sysobject_contents sc where s.system_id= sc.system_id and c.content_id = sc.content_id and c.content_id in (select system_id from htcms.content_category cc where cc.domain=\"docparts\" and cc.value=\"reflinksnew\")";
 
 
     /**

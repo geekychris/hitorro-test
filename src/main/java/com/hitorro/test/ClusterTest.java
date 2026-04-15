@@ -41,7 +41,7 @@ import com.hitorro.util.testframework.RunLevel;
         description = "Tests of cluster management",
         module = "util")
 public class ClusterTest extends EnhancedTestCase {
-    public static String nodeIds[] = {"nodea", "nodeb", "nodec", "noded", "nodee"};
+    public static final String nodeIds[] = {"nodea", "nodeb", "nodec", "noded", "nodee"};
 
 
     public void testClusterA() {

@@ -29,11 +29,11 @@ import com.hitorro.util.json.keys.StringProperty;
 
 
 public class EmitterElemMapper implements Mapper<JsonNode, EmitterElem> {
-    public static final LongProperty FpKey = new LongProperty("fp", "", 0l);
-    public static final IntegerProperty StartKey = new IntegerProperty("startPos", "", 0);
-    public static final IntegerProperty SizeKey = new IntegerProperty("size", "", 0);
-    public static final StringProperty TxtKey = new StringProperty("text", "", null);
-    public static final LongProperty ValKey = new LongProperty("val", "", 0l);
+    public static LongProperty FpKey = new LongProperty("fp", "", 0l);
+    public static IntegerProperty StartKey = new IntegerProperty("startPos", "", 0);
+    public static IntegerProperty SizeKey = new IntegerProperty("size", "", 0);
+    public static StringProperty TxtKey = new StringProperty("text", "", null);
+    public static LongProperty ValKey = new LongProperty("val", "", 0l);
     public static EmitterElemMapper mapper = new EmitterElemMapper();
 
     @Override

@@ -43,13 +43,13 @@ import java.io.IOException;
 public class NodeGroupTest extends EnhancedTestCase {
     public static final String TQ = "transcodequeue";
 
-    public static final HTSerializable getSerializedLoopback(HTSerializable pts)
+    public static HTSerializable getSerializedLoopback(HTSerializable pts)
             throws IOException, ClassNotFoundException, StoreException {
         return getHTSerializableFromByteArray(getBytesFromHTObject(pts));
 
     }
 
-    public static final byte[] getBytesFromHTObject(HTSerializable pts)
+    public static byte[] getBytesFromHTObject(HTSerializable pts)
             throws IOException, StoreException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         HTObjectOutputStream os = HTObjectStreamFactory.getOutputStream(baos, null, false);
@@ -60,7 +60,7 @@ public class NodeGroupTest extends EnhancedTestCase {
         return buf;
     }
 
-    public static final HTSerializable getHTSerializableFromByteArray(byte buf[])
+    public static HTSerializable getHTSerializableFromByteArray(byte buf[])
             throws IOException, StoreException, ClassNotFoundException {
         ByteArrayInputStream bais = new ByteArrayInputStream(buf);
 
