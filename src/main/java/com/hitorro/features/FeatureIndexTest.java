@@ -72,18 +72,15 @@ public class FeatureIndexTest extends EnhancedTestCase {
 
         FeatureValue fv = FeatureValue.getFeature(floatSingle, 1234, 1111, new Integer(4));
         FeatureValue out = this.grind(fv);
-        FeatureIndexer linearizer = new FeatureIndexer(10000, 5 * 60, tempDir, 8);
+        FeatureIndexer linearizer = new FeatureIndexer(tempDir);
 
         linearizer.start();
 
         for (int i = 0; i < 4; i++) {
             int offset = i * iterations;
-            if (generateSampleFeatures(offset, iterations, linearizer, intSingle, floatSingle)) {
-                linearizer.flushBucket();
-                // in runnable mode no need to use flushbucket or process
-                linearizer.process();
-            }
+            generateSampleFeatures(offset, iterations, linearizer, intSingle, floatSingle);
         }
+        linearizer.stop();
         FeatureCacheManager fcm = new FeatureCacheManager(tempDir);
 
         FeatureIndexManager manager = fcm.getFIM();
@@ -124,11 +121,11 @@ public class FeatureIndexTest extends EnhancedTestCase {
             int id = i + offset;
             FeatureValue intFeatureValue = FeatureValue.getFeature(intSingle, id, 0, id % 125);
             assertNotNull(intFeatureValue);
-            linearizer.add(intFeatureValue);
+            linearizer.addToStream(intFeatureValue);
 
             FeatureValue floatFeatureValue = FeatureValue.getFeature(floatSingle, id, 0, ((float) id % 100) / 123);
             assertNotNull(floatFeatureValue);
-            linearizer.add(floatFeatureValue);
+            linearizer.addToStream(floatFeatureValue);
         }
         return true;
     }
