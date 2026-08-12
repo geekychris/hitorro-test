@@ -26,7 +26,6 @@ import com.hitorro.jsontypesystem.dynamic.DynamicMapper;
 import com.hitorro.language.HTJWNLDictionary;
 import com.hitorro.util.basefile.fs.BaseFile;
 import com.hitorro.util.core.Console;
-import com.hitorro.util.core.Env;
 import com.hitorro.util.json.JsonInitable;
 import com.hitorro.util.json.keys.BooleanProperty;
 import com.hitorro.util.json.keys.IntegerProperty;
@@ -36,6 +35,7 @@ import com.hitorro.util.json.keys.propaccess.Propaccess;
 import com.hitorro.util.testframework.EnhancedTestCase;
 import com.hitorro.util.testframework.HTTest;
 import com.hitorro.util.testframework.RunLevel;
+import com.hitorro.util.basefile.tools.EnvBaseFiles;
 
 import java.io.File;
 import java.util.Date;
@@ -55,7 +55,7 @@ public class JsonTypesystemTest extends EnhancedTestCase {
             HTJWNLDictionary dict = HTJWNLDictionary.me.get();
 
 
-            BaseFile bf = Env.getBinBaseFileSystem().getFile("data/typeexamples/sysobject_example.json");
+            BaseFile bf = EnvBaseFiles.getBinBaseFileSystem().getFile("data/typeexamples/sysobject_example.json");
             if (bf.exists()) {
                 PropaccessProperty propKey = new PropaccessProperty("", "", null);
                 DynamicMapper dm = new DynamicMapper();

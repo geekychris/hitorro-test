@@ -28,13 +28,13 @@ import com.hitorro.features.index.FeatureIndexManager;
 import com.hitorro.features.index.FeatureIndexer;
 import com.hitorro.features.index.FeatureQueryContext;
 import com.hitorro.util.basefile.fs.BaseFile;
-import com.hitorro.util.core.Env;
 import com.hitorro.util.testframework.EnhancedTestCase;
 import com.hitorro.util.testframework.HTTest;
 import com.hitorro.util.testframework.RunLevel;
 import com.hitorro.util.typesystem.HTSerializableUtil;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
+import com.hitorro.util.basefile.tools.EnvBaseFiles;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,10 +59,10 @@ public class FeatureIndexTest extends EnhancedTestCase {
     }
 
     private File generatedSortedSampleFeatures(int iterations) throws Exception {
-        BaseFile tempDir = Env.getBaseFile(this.getOutputFileRelative("tmpdir"));
+        BaseFile tempDir = EnvBaseFiles.getBaseFile(this.getOutputFileRelative("tmpdir"));
         tempDir.deleteAndRecreateDir(true);
 
-        BaseFile temp = Env.getBaseFile(this.getOutputFileRelative("temp.ser"));
+        BaseFile temp = EnvBaseFiles.getBaseFile(this.getOutputFileRelative("temp.ser"));
 
         Feature intSingle = FeatureEngine.getEngine().getFeature("testintsingle");
         Feature floatSingle = FeatureEngine.getEngine().getFeature("testfloatsingle");
@@ -102,7 +102,7 @@ public class FeatureIndexTest extends EnhancedTestCase {
     }
 
     public void testMerge() throws IOException {
-        BaseFile tempDir = Env.getBaseFile(this.getOutputFileRelative("tmpdir"));
+        BaseFile tempDir = EnvBaseFiles.getBaseFile(this.getOutputFileRelative("tmpdir"));
         FeatureCacheManager fcm = new FeatureCacheManager(tempDir);
 
         FeatureIndexManager manager = fcm.getFIM();

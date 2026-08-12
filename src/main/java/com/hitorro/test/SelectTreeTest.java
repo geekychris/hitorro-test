@@ -26,7 +26,6 @@ import com.hitorro.basedms.session.DMSSession;
 import com.hitorro.test.dms.NonPersistObject;
 import com.hitorro.util.basefile.filters.FileExtension;
 import com.hitorro.util.basefile.fs.BaseFile;
-import com.hitorro.util.core.Env;
 import com.hitorro.util.core.iterator.LikeRowMerger;
 import com.hitorro.util.core.iterator.mappers.DummyBaseMapper;
 import com.hitorro.util.core.string.Fmt;
@@ -42,6 +41,7 @@ import com.hitorro.util.testframework.RunLevel;
 import com.hitorro.util.typesystem.HTSerializable;
 import com.hitorro.util.typesystem.HTSerializableUtil;
 import com.hitorro.util.typesystem.TypeManager;
+import com.hitorro.util.basefile.tools.EnvBaseFiles;
 
 import java.util.Comparator;
 import java.util.Date;
@@ -73,7 +73,7 @@ public class SelectTreeTest extends EnhancedTestCase {
 
     public void testBucketizerAndSelectTreesWithMerger() throws Exception {
         int iters = 100000;
-        BaseFile dir = Env.getBaseFile(this.getOutputFileRelative("/bucketizer/"));
+        BaseFile dir = EnvBaseFiles.getBaseFile(this.getOutputFileRelative("/bucketizer/"));
         dir.deleteContentOfDir(true);
         dir.mkdir();
         TypeManager.getTypeManager().addTypeIfAbsent(NonPersistObject.class);

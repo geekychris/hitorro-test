@@ -31,7 +31,6 @@ import com.hitorro.analysis.linkengine.tuple.LinkTupleReader;
 import com.hitorro.analysis.linkengine.tuple.filters.TypeFilter;
 import com.hitorro.util.core.ArrayUtil;
 import com.hitorro.util.core.Console;
-import com.hitorro.util.core.Env;
 import com.hitorro.util.core.hash.FPHash64;
 import com.hitorro.util.core.string.StringUtil;
 import com.hitorro.util.html.Link;
@@ -39,6 +38,7 @@ import com.hitorro.util.io.FileUtil;
 import com.hitorro.util.testframework.EnhancedTestCase;
 import com.hitorro.util.testframework.HTTest;
 import com.hitorro.util.testframework.RunLevel;
+import com.hitorro.util.basefile.tools.EnvBaseFiles;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -80,7 +80,7 @@ public class LinkEngineFullTest extends EnhancedTestCase {
         getEntitiesFromFile(graphInput2, map, entries2);
         File leDir = this.getOutputFileRelative("smallgraphtest");
         FileUtil.deleteAndRecreateDir(leDir);
-        LinkEngine le = new LinkEngine(Env.getBaseFile(leDir));
+        LinkEngine le = new LinkEngine(EnvBaseFiles.getBaseFile(leDir));
         LinkSegmentWriter lsw = le.getWriter();
         LinkSegmentWriter lsw2 = le.getWriter();
         List<Link> links = new ArrayList();
