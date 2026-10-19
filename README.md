@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="Hitorro Test logo" width="180">
+</p>
+
 # Hitorro Test Suite
 
 Comprehensive unit tests for the Hitorro project, covering features, analysis, text processing, persistence, and utilities.
