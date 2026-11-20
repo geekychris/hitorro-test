@@ -21,7 +21,7 @@
  */
 package com.hitorro.analysis.text;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.util.core.iterator.Mapper;
 import com.hitorro.util.json.keys.IntegerProperty;
 import com.hitorro.util.json.keys.LongProperty;

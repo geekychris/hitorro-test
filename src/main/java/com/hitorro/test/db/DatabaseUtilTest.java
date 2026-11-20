@@ -21,7 +21,7 @@
  */
 package com.hitorro.test.db;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.basedms.db.DatabaseUtil;
 import com.hitorro.jsontypesystem.JVS;
 import com.hitorro.util.core.Log;

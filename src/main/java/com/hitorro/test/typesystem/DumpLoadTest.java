@@ -21,7 +21,7 @@
  */
 package com.hitorro.test.typesystem;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.basedms.db.DatabaseUtil;
 import com.hitorro.jsontypesystem.propreaders.JVSProperties;
 import com.hitorro.util.core.Log;

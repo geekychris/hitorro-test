@@ -21,7 +21,7 @@
  */
 package com.hitorro.util.core;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.features.Feature;
 import com.hitorro.util.json.keys.propaccess.PropaccessError;
 import com.hitorro.util.propertykeys.complex.ComplexPropertiesException;

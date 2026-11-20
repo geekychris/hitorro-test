@@ -21,7 +21,7 @@
  */
 package com.hitorro.test.db;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.basedms.db.HibernateService;
 import com.hitorro.basedms.db.executor.Executor;
 import com.hitorro.basedms.db.executor.Result;

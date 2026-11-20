@@ -21,7 +21,7 @@
  */
 package com.hitorro.util.basefile;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.basedms.session.DMSSessionFactory;
 import com.hitorro.util.basefile.filters.FileExtension;
 import com.hitorro.util.basefile.filters.FileStartsWith;
