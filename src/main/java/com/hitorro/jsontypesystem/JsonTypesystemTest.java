@@ -21,7 +21,7 @@
  */
 package com.hitorro.jsontypesystem;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.jsontypesystem.dynamic.DynamicMapper;
 import com.hitorro.language.HTJWNLDictionary;
 import com.hitorro.util.basefile.fs.BaseFile;

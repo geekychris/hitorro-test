@@ -21,7 +21,7 @@
  */
 package com.hitorro.test;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import com.hitorro.basedms.ssh.SshCommand;
 import com.hitorro.basedms.ssh.SshConstants;
 import com.hitorro.basedms.ssh.SshExec;
